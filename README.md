@@ -1,58 +1,164 @@
 # ilopex-personal-web
 
-Base técnica de la web personal multilingüe de Iván López López.
+Web personal estática y multilingüe de Iván López López. La arquitectura está
+funcional; el diseño visual y la migración final de contenidos se harán en una fase
+posterior.
 
-## Arquitectura
+## Estado actual
 
 - Astro 7 y TypeScript estricto.
-- Salida 100 % estática; no hay API, base de datos ni JavaScript de traducción.
+- HTML estático, sin API ni base de datos.
 - Español en `/`, inglés en `/en/` y catalán en `/ca/`.
-- Todos los textos editables están centralizados en `src/i18n/content.ts`.
-- Componentes semánticos sin decisiones de diseño en esta fase.
-- Docker multi-stage: Node compila y Nginx sirve los archivos en el puerto `8080`.
-- GitHub Actions valida el proyecto y el contenedor en infraestructura aislada.
-- Coolify construye el mismo `Dockerfile`; la promoción se ordena desde la LAN.
+- Todos los textos editables están centralizados y tipados.
+- Imagen de producción servida por Nginx en el puerto `8080`.
+- CI en GitHub Actions con build, comprobaciones de tipos y smoke tests del contenedor.
+- Aplicación desplegada en Coolify dentro de la LAN, con health check activo.
+- Sin decisiones de diseño ni dominio configurado todavía.
 
-```text
-.
-├── .github/workflows/ci.yml
-├── docs/
-├── public/
-├── src/
-│   ├── components/
-│   ├── i18n/
-│   ├── layouts/
-│   └── pages/
-├── Dockerfile
-├── nginx.conf
-└── package.json
-```
+## Cómo revisar la web
 
-## Desarrollo local
+### Desarrollo local
 
-Requiere Node.js 24 o superior.
+Requiere Node.js 24 o superior y npm 11 o superior.
 
 ```bash
+gh repo clone IveeYH/ilopex-personal-web
+cd ilopex-personal-web
 npm ci
 npm run dev
 ```
 
-Comprobación equivalente a CI:
+Abrir en el navegador:
+
+- Español: <http://localhost:4321/>
+- Inglés: <http://localhost:4321/en/>
+- Catalán: <http://localhost:4321/ca/>
+
+Para revisarla desde otro dispositivo de la misma LAN:
+
+```bash
+npm run dev -- --host 0.0.0.0
+```
+
+Después se abre `http://IP_DEL_EQUIPO:4321`. No se debe exponer este servidor de
+desarrollo a Internet.
+
+### Contenedor de producción local
+
+Esta opción reproduce lo que ejecuta Coolify:
+
+```bash
+docker build --tag ilopex-personal-web:local .
+docker run --rm --name ilopex-personal-web \
+  --publish 127.0.0.1:8080:8080 \
+  ilopex-personal-web:local
+```
+
+La web queda en <http://localhost:8080/> y el health check en
+<http://localhost:8080/healthz>.
+
+### Coolify
+
+La aplicación de Coolify está construida y saludable, pero no tiene FQDN por decisión
+de proyecto. Hasta configurar el DNS no existe una URL de navegador para la instancia
+desplegada; se puede revisar localmente con cualquiera de las dos opciones anteriores.
+
+## Flujo de trabajo
+
+Partir siempre de `main` actualizado y trabajar en una rama corta:
+
+```bash
+git switch main
+git pull --ff-only
+git switch -c feat/nombre-del-cambio
+```
+
+Antes de publicar:
 
 ```bash
 npm run ci
-docker build --tag ilopex-personal-web:local .
+git status
+git add RUTA_DE_CADA_ARCHIVO
+git commit -m "tipo: descripción breve"
+git push -u origin feat/nombre-del-cambio
+gh pr create --draft
 ```
 
-## Contenido e idiomas
+El comando `npm run ci` aplica la misma validación funcional que GitHub Actions:
+formato, tipos, build estático y comprobación de las tres páginas localizadas. GitHub
+añade además la construcción y los smoke tests del contenedor de producción.
 
-El tipo `SiteContent` define la misma estructura para los tres idiomas. Para cambiar
-copy, fechas o experiencia se edita únicamente `src/i18n/content.ts`; las páginas y los
-componentes no contienen textos de negocio.
+## Editar textos e idiomas
 
-## Despliegue
+Los textos de los tres idiomas viven en un único archivo:
 
-Consulta `docs/coolify.md`. Coolify solo es accesible desde la LAN, por lo que no se
-guardan credenciales de Coolify en GitHub ni se configura un webhook imposible de
-alcanzar. Tras superar CI, la versión se promueve mediante el MCP o la API local de
-Coolify.
+```text
+src/i18n/content.ts
+```
+
+El tipo `SiteContent` obliga a mantener la misma estructura en español, inglés y
+catalán. Los componentes y las páginas no deben contener copy de negocio.
+
+Para añadir otro idioma:
+
+1. Declarar el locale y su ruta en `src/i18n/config.ts`.
+2. Añadir todo su contenido en `src/i18n/content.ts`.
+3. Añadir su URL a `public/sitemap.xml`.
+4. Ejecutar `npm run ci` para comprobar rutas, canonical y `hreflang`.
+
+## Estructura
+
+```text
+.
+├── .github/workflows/ci.yml    # Integración continua
+├── docs/                       # Decisiones y auditoría técnica
+├── public/                     # robots.txt, sitemap y futuros assets
+├── scripts/verify-build.mjs    # Comprobaciones del HTML generado
+├── src/
+│   ├── components/             # Estructura semántica compartida
+│   ├── i18n/                   # Configuración y contenido ES/EN/CA
+│   ├── layouts/                # HTML, SEO, canonical y hreflang
+│   └── pages/                  # Rutas estáticas
+├── Dockerfile                  # Build multi-stage y runtime Nginx
+├── nginx.conf                  # Servidor estático y health check
+└── package.json
+```
+
+## Comandos
+
+| Comando                | Uso                                         |
+| ---------------------- | ------------------------------------------- |
+| `npm run dev`          | Servidor de desarrollo                      |
+| `npm run build`        | Genera la web en `dist/`                    |
+| `npm run preview`      | Previsualiza el build de Astro              |
+| `npm run check`        | Valida Astro y TypeScript                   |
+| `npm test`             | Comprueba las páginas generadas             |
+| `npm run format`       | Formatea el repositorio                     |
+| `npm run format:check` | Comprueba el formato sin modificar archivos |
+| `npm run ci`           | Ejecuta toda la validación local            |
+
+## Entrega a Coolify
+
+1. El pull request debe superar `Quality and static build` y
+   `Production container`.
+2. Tras fusionar en `main`, se comprueba de nuevo el commit en GitHub Actions.
+3. Desde un cliente dentro de la LAN se promueve `main` mediante Coolify MCP o su API
+   local.
+4. Coolify reconstruye el `Dockerfile` y valida `GET /healthz` antes de dar la
+   aplicación por saludable.
+
+`Auto Deploy` permanece desactivado porque GitHub no puede entrar en una dirección
+`.home.arpa`. No se necesita SSH y no se guardan tokens ni URLs internas en GitHub.
+
+## Documentación
+
+- [Arquitectura](docs/architecture.md)
+- [Despliegue con Coolify](docs/coolify.md)
+- [Auditoría de la web actual](docs/current-site-audit.md)
+
+## Seguridad
+
+- Nunca se suben `.env`, tokens de Coolify, claves SSH ni credenciales.
+- Los tokens de inventario, configuración y despliegue deben estar separados y usar el
+  mínimo permiso necesario.
+- Cualquier credencial compartida accidentalmente debe revocarse y reemplazarse.
