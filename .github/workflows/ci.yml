@@ -1,0 +1,73 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ilopex-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  quality:
+    name: Quality and static build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check and build
+        run: npm run ci
+
+  container:
+    name: Production container
+    needs: quality
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Build Docker image
+        run: docker build --tag ilopex-personal-web:${{ github.sha }} .
+
+      - name: Start production container
+        run: >-
+          docker run --detach
+          --name ilopex-personal-web-ci
+          --publish 127.0.0.1:8080:8080
+          ilopex-personal-web:${{ github.sha }}
+
+      - name: Smoke test production container
+        run: |
+          curl --fail --silent --show-error \
+            --retry 10 --retry-all-errors --retry-delay 1 \
+            http://127.0.0.1:8080/healthz
+          curl --fail --silent --show-error --output /dev/null http://127.0.0.1:8080/
+          curl --fail --silent --show-error --output /dev/null http://127.0.0.1:8080/en/
+          curl --fail --silent --show-error --output /dev/null http://127.0.0.1:8080/ca/
+
+      - name: Print container logs on failure
+        if: failure()
+        run: docker logs ilopex-personal-web-ci
+
+      - name: Stop production container
+        if: always()
+        run: docker rm --force ilopex-personal-web-ci

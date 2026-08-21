@@ -1,0 +1,12 @@
+.git
+.github
+.astro
+dist
+docs
+node_modules
+npm-debug.log*
+tmp
+.env
+.env.*
+!.env.example
+.DS_Store
