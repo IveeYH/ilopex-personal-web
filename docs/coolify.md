@@ -7,9 +7,14 @@
 - Fuente: repositorio público `IveeYH/ilopex-personal-web`.
 - Build Pack: `Dockerfile`, con `/` como base directory y `/Dockerfile` como ruta.
 - Puerto interno: `8080`.
+- Acceso LAN temporal: mapeo de puerto `18080:8080`.
 - Health check: `GET /healthz`, respuesta esperada `200`.
 - **Auto Deploy**: desactivado.
 - Dominio: pendiente; se configurará en una fase separada.
+
+Hasta configurar el dominio, la web se revisa desde la LAN en
+`http://IP_DEL_SERVIDOR:18080`. La IP concreta se mantiene fuera del repositorio
+público.
 
 Durante la puesta en marcha se puede desplegar la rama de trabajo. Una vez validada y
 fusionada, la fuente de producción debe quedar fijada a `main`.
