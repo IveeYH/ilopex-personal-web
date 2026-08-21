@@ -1,37 +1,64 @@
 # Despliegue con Coolify
 
-## Aplicación
+## Estado de la aplicación
 
-1. Crear una aplicación apuntando a `IveeYH/ilopex-personal-web`, rama `main`.
-2. Elegir `Dockerfile` como Build Pack y `/` como base directory.
-3. Configurar el puerto interno `8080` y el health check `/healthz`.
-4. Desactivar **Auto Deploy** para que cada push espere a superar GitHub Actions.
+- Proyecto: `ilopex-personal-web`.
+- Entorno: `production`.
+- Fuente: repositorio público `IveeYH/ilopex-personal-web`.
+- Build Pack: `Dockerfile`, con `/` como base directory y `/Dockerfile` como ruta.
+- Puerto interno: `8080`.
+- Health check: `GET /healthz`, respuesta esperada `200`.
+- **Auto Deploy**: desactivado.
+- Dominio: pendiente; se configurará en una fase separada.
 
-El repositorio es público actualmente. Si pasa a privado, se conecta la GitHub App de
-Coolify como fuente, manteniendo Auto Deploy desactivado.
+Durante la puesta en marcha se puede desplegar la rama de trabajo. Una vez validada y
+fusionada, la fuente de producción debe quedar fijada a `main`.
 
-## Webhook autenticado
+## Flujo de entrega actual
 
-1. Habilitar API Access en `Settings → Configuration → Advanced`.
-2. Crear un token limitado al permiso de despliegue.
-3. Copiar el Deploy webhook de la aplicación.
-4. Crear en GitHub el environment `production` con los secretos:
-   - `COOLIFY_WEBHOOK`
-   - `COOLIFY_TOKEN`
-5. Crear la variable de repositorio `COOLIFY_DEPLOY_ENABLED=true`.
+1. Abrir un pull request y esperar a que los jobs `Quality and static build` y
+   `Production container` terminen correctamente.
+2. Fusionar el cambio en `main`.
+3. Desde un cliente dentro de la LAN, ordenar a Coolify desplegar la aplicación por MCP
+   o por la API local.
+4. Confirmar que el despliegue termina correctamente y que el recurso queda healthy.
 
-El workflow llama al webhook únicamente después de validar el proyecto y construir el
-contenedor. Coolify vuelve a construir desde `main`; esta duplicación es intencionada
-para evitar añadir GHCR y credenciales de registro a una web pequeña.
+No se necesita SSH. Tampoco se guardan en GitHub la URL interna, el UUID de la
+aplicación ni tokens de Coolify.
 
-Si Coolify solo es accesible dentro de la LAN, un runner alojado por GitHub no podrá
-alcanzar el webhook: hará falta un runner self-hosted dedicado o una red privada. Los
-jobs de pull request deben seguir ejecutándose en runners de GitHub, no en el servidor
-local. SSH no es el mecanismo de despliegue.
+## Por qué no hay un webhook en GitHub Actions
+
+La instancia usa una dirección `.home.arpa` que solo resuelve y responde dentro de la
+LAN. Un runner alojado por GitHub no puede alcanzar ese webhook. **Auto Deploy** también
+necesitaría que GitHub pudiera entrar en Coolify, por lo que permanece desactivado.
+
+Mientras el repositorio sea público no se debe conectar un runner self-hosted con
+acceso a la LAN. Para automatizar la promoción hay dos caminos seguros:
+
+1. Convertir el repositorio en privado y dedicar un runner aislado únicamente al job de
+   despliegue.
+2. Mantenerlo público y ejecutar en la LAN un poller mínimo que solo consulte el último
+   workflow satisfactorio de `main` y llame a Coolify; ese proceso no debe clonar ni
+   ejecutar código de pull requests.
+
+Hasta elegir una de esas opciones, el MCP proporciona una promoción explícita y
+auditable sin abrir Coolify a Internet.
+
+## Credenciales
+
+- Usar un token `read` para inventario y diagnóstico.
+- Usar un token `deploy` separado para despliegues.
+- Conceder `write` únicamente durante cambios de configuración.
+- No usar `root` ni `read:sensitive` para este proyecto.
+- Guardar todos los tokens fuera del repositorio, limitar su caducidad y revocarlos si
+  se han expuesto.
 
 Referencias:
 
 - [Coolify: GitHub Actions](https://coolify.io/docs/applications/ci-cd/github/actions/)
 - [Coolify: Auto Deploy](https://coolify.io/docs/applications/ci-cd/github/auto-deploy)
 - [Coolify: Dockerfile](https://coolify.io/docs/applications/build-packs/dockerfile)
+- [Coolify: MCP](https://coolify.io/docs/integrations/mcp)
+- [Coolify: autorización API](https://coolify.io/docs/api-reference/authorization)
 - [Coolify: deploy por UUID](https://coolify.io/docs/api-reference/api/deployments/deploy-by-tag-or-uuid)
+- [GitHub: seguridad de runners self-hosted](https://docs.github.com/en/actions/reference/security/secure-use)

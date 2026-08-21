@@ -34,7 +34,30 @@ El mismo `Dockerfile` se construye en CI y en Coolify. Nginx expone `8080` y
 `/healthz`. Al no existir estado persistente, cualquier instancia es reemplazable y el
 rollback consiste en volver a desplegar un commit anterior.
 
-Por simplicidad, CI valida el código y el contenedor, y Coolify reconstruye desde
-`main`. No se está promocionando una imagen inmutable entre ambos sistemas. Si el
-proyecto necesitara esa garantía, el siguiente paso sería publicar la imagen etiquetada
-con el SHA en GHCR y configurar Coolify para consumirla.
+```text
+pull request / push a main
+            │
+            ▼
+  GitHub Actions (CI)
+  ├── formato y tipos
+  ├── build estático
+  └── contenedor + smoke tests
+            │
+            ▼ solo después de CI verde
+  promoción desde la LAN
+  (Coolify MCP o API local)
+            │
+            ▼
+  Coolify construye Dockerfile
+  y valida /healthz
+```
+
+Coolify no es alcanzable desde los runners alojados por GitHub. Por eso la CI no
+contiene un job remoto que nunca podría conectar y el repositorio no almacena secretos
+de Coolify. La promoción actual es explícita y se ejecuta desde un cliente dentro de la
+LAN.
+
+No se está promocionando una imagen inmutable entre ambos sistemas: Coolify reconstruye
+el mismo commit desde `main`. Si el proyecto necesitara esa garantía, el siguiente paso
+sería publicar la imagen etiquetada con el SHA en GHCR y configurar Coolify para
+consumirla.

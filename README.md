@@ -10,7 +10,8 @@ Base técnica de la web personal multilingüe de Iván López López.
 - Todos los textos editables están centralizados en `src/i18n/content.ts`.
 - Componentes semánticos sin decisiones de diseño en esta fase.
 - Docker multi-stage: Node compila y Nginx sirve los archivos en el puerto `8080`.
-- GitHub Actions valida el proyecto y solo entonces puede activar Coolify.
+- GitHub Actions valida el proyecto y el contenedor en infraestructura aislada.
+- Coolify construye el mismo `Dockerfile`; la promoción se ordena desde la LAN.
 
 ```text
 .
@@ -51,6 +52,7 @@ componentes no contienen textos de negocio.
 
 ## Despliegue
 
-Consulta `docs/coolify.md`. El despliegue queda deshabilitado hasta crear la variable de
-repositorio `COOLIFY_DEPLOY_ENABLED=true` y los secretos `COOLIFY_WEBHOOK` y
-`COOLIFY_TOKEN` en el environment de GitHub `production`.
+Consulta `docs/coolify.md`. Coolify solo es accesible desde la LAN, por lo que no se
+guardan credenciales de Coolify en GitHub ni se configura un webhook imposible de
+alcanzar. Tras superar CI, la versión se promueve mediante el MCP o la API local de
+Coolify.
