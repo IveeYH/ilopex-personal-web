@@ -59,9 +59,16 @@ La web queda en <http://localhost:8080/> y el health check en
 
 ### Coolify
 
-La aplicación de Coolify está construida y saludable, pero no tiene FQDN por decisión
-de proyecto. Hasta configurar el DNS no existe una URL de navegador para la instancia
-desplegada; se puede revisar localmente con cualquiera de las dos opciones anteriores.
+La aplicación de Coolify está construida y saludable. Hasta configurar el FQDN
+definitivo, el contenedor publica temporalmente `18080:8080` dentro de la LAN:
+
+- Español: `http://IP_DEL_SERVIDOR:18080/`
+- Inglés: `http://IP_DEL_SERVIDOR:18080/en/`
+- Catalán: `http://IP_DEL_SERVIDOR:18080/ca/`
+- Health check: `http://IP_DEL_SERVIDOR:18080/healthz`
+
+La IP concreta no se publica en este repositorio público. Este acceso directo se
+reemplazará por el dominio definitivo en la fase de DNS.
 
 ## Flujo de trabajo
 
