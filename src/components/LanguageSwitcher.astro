@@ -1,0 +1,31 @@
+---
+import { localePath, locales, type Locale } from "../i18n/config";
+import type { SiteContent } from "../i18n/content";
+
+interface Props {
+  locale: Locale;
+  label: SiteContent["nav"]["language"];
+  names: SiteContent["nav"]["languageNames"];
+}
+
+const { locale, label, names } = Astro.props;
+---
+
+<nav aria-label={label}>
+  <ul>
+    {
+      locales.map((targetLocale) => (
+        <li>
+          <a
+            href={localePath(targetLocale)}
+            lang={targetLocale}
+            hreflang={targetLocale}
+            aria-current={targetLocale === locale ? "page" : undefined}
+          >
+            {names[targetLocale]}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>

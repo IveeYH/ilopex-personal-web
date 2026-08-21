@@ -1,0 +1,58 @@
+---
+import type { Locale } from "../i18n/config";
+import { localePath } from "../i18n/config";
+import { content, profile } from "../i18n/content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ExperienceList from "./ExperienceList.astro";
+import LanguageSwitcher from "./LanguageSwitcher.astro";
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const copy = content[locale];
+---
+
+<BaseLayout locale={locale} meta={copy.meta}>
+  <a href="#main-content">{copy.a11y.skipToContent}</a>
+
+  <header>
+    <a href={localePath(locale)}>{profile.name}</a>
+    <nav aria-label={copy.nav.label}>
+      <ul>
+        <li><a href={localePath(locale)}>{copy.nav.home}</a></li>
+        <li><a href="#experience">{copy.nav.experience}</a></li>
+      </ul>
+    </nav>
+    <LanguageSwitcher
+      locale={locale}
+      label={copy.nav.language}
+      names={copy.nav.languageNames}
+    />
+  </header>
+
+  <main id="main-content">
+    <section aria-labelledby="page-title">
+      <p>{copy.hero.role}</p>
+      <h1 id="page-title">{profile.name}</h1>
+      <p>{copy.hero.tagline}</p>
+      <p>{copy.hero.introduction}</p>
+      <ul>
+        <li>
+          <a href={profile.linkedIn} rel="me noopener" target="_blank">
+            {copy.hero.linkedIn}
+          </a>
+        </li>
+        <li><a href={`mailto:${profile.email}`}>{copy.hero.email}</a></li>
+      </ul>
+    </section>
+
+    <ExperienceList experience={copy.experience} />
+  </main>
+
+  <footer>
+    <p>© {new Date().getFullYear()} {profile.name}</p>
+    <p>{copy.footer}</p>
+  </footer>
+</BaseLayout>

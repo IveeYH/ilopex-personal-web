@@ -1,0 +1,60 @@
+---
+import { localePath, locales, type Locale } from "../i18n/config";
+import { profile, type SiteContent } from "../i18n/content";
+
+interface Props {
+  locale: Locale;
+  meta: SiteContent["meta"];
+}
+
+const { locale, meta } = Astro.props;
+const site = Astro.site ?? new URL("https://ilopex.com");
+const canonical = new URL(localePath(locale), site);
+const structuredData = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: profile.name,
+  url: canonical.href,
+  email: `mailto:${profile.email}`,
+  sameAs: [profile.linkedIn],
+});
+---
+
+<!doctype html>
+<html lang={locale}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={meta.description} />
+    <meta name="robots" content="index, follow" />
+    <title>{meta.title}</title>
+
+    <link rel="canonical" href={canonical} />
+    <link rel="sitemap" href="/sitemap.xml" />
+    {
+      locales.map((targetLocale) => (
+        <link
+          rel="alternate"
+          hreflang={targetLocale}
+          href={new URL(localePath(targetLocale), site)}
+        />
+      ))
+    }
+    <link rel="alternate" hreflang="x-default" href={new URL("/", site)} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={profile.name} />
+    <meta property="og:title" content={meta.title} />
+    <meta property="og:description" content={meta.description} />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={meta.title} />
+    <meta name="twitter:description" content={meta.description} />
+
+    <script type="application/ld+json" set:html={structuredData} is:inline />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
