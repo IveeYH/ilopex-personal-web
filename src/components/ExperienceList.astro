@@ -8,27 +8,45 @@ interface Props {
 const { experience } = Astro.props;
 ---
 
-<section id="experience" aria-labelledby="experience-title">
-  <h2 id="experience-title">{experience.title}</h2>
-  <ol>
-    {
-      experience.items.map((item) => (
-        <li>
-          <article>
-            <h3>
-              {item.company} — {item.role}
-            </h3>
-            <time datetime={item.dateTime}>{item.date}</time>
-            <p>{item.summary}</p>
-            <h4>{experience.highlightsLabel}</h4>
-            <ul>
-              {item.highlights.map((highlight) => (
-                <li>{highlight}</li>
-              ))}
-            </ul>
-          </article>
-        </li>
-      ))
-    }
-  </ol>
-</section>
+<ol class="experience-list" role="list">
+  {
+    experience.items.map((item) => (
+      <li>
+        <article class="card experience-card">
+          <header class="experience-card__header">
+            <div>
+              <h3>{item.role}</h3>
+              <p>{item.company}</p>
+            </div>
+            <p class="period">{item.period}</p>
+          </header>
+          <dl class="experience-card__details experience-card__details--desktop">
+            <div>
+              <dt>{experience.labels.scope}</dt>
+              <dd>{item.scope}</dd>
+            </div>
+            <div>
+              <dt>{experience.labels.approach}</dt>
+              <dd>{item.approach}</dd>
+            </div>
+            <div>
+              <dt>{experience.labels.application}</dt>
+              <dd>{item.application}</dd>
+            </div>
+          </dl>
+          <dl class="experience-card__details experience-card__details--mobile">
+            <div>
+              <dt>{experience.labels.scope}</dt>
+              <dd>{item.compactScope}</dd>
+            </div>
+            <div>
+              <dt>{experience.labels.application}</dt>
+              <dd>{item.compactApplication}</dd>
+            </div>
+          </dl>
+          {item.note && <p class="experience-card__note">{item.note}</p>}
+        </article>
+      </li>
+    ))
+  }
+</ol>

@@ -1,8 +1,8 @@
 # ilopex-personal-web
 
-Web personal estática y multilingüe de Iván López López. La arquitectura está
-funcional; el diseño visual y la migración final de contenidos se harán en una fase
-posterior.
+Web personal estática y multilingüe de Iván López López. La interfaz implementa la
+revisión 02 del archivo de Penpot `Nuevo Archivo 1` con componentes Astro y CSS
+responsive propios.
 
 ## Estado actual
 
@@ -10,10 +10,12 @@ posterior.
 - HTML estático, sin API ni base de datos.
 - Español en `/`, inglés en `/en/` y catalán en `/ca/`.
 - Todos los textos editables están centralizados y tipados.
+- Diseño desktop y mobile materializado desde Penpot, sin runtime de UI externo.
+- Source Sans Pro se sirve desde el propio build; no hay peticiones a Google Fonts.
 - Imagen de producción servida por Nginx en el puerto `8080`.
 - CI en GitHub Actions con build, comprobaciones de tipos y smoke tests del contenedor.
 - Aplicación desplegada en Coolify dentro de la LAN, con health check activo.
-- Sin decisiones de diseño ni dominio configurado todavía.
+- Dominio público pendiente de configurar.
 
 ## Cómo revisar la web
 
@@ -113,6 +115,26 @@ Para añadir otro idioma:
 3. Añadir su URL a `public/sitemap.xml`.
 4. Ejecutar `npm run ci` para comprobar rutas, canonical y `hreflang`.
 
+## Editar el diseño
+
+Los tokens visuales y el responsive viven en `src/styles/global.css`. Los colores,
+radios, escala tipográfica y espaciado parten de las foundations de Penpot. La
+estructura se reparte por responsabilidad:
+
+- `SiteHeader.astro`: navegación desktop, menú móvil e idiomas.
+- `HomePage.astro`: composición y orden semántico de las secciones.
+- `CapabilityGrid.astro`, `ExperienceList.astro` y `SkillsGrid.astro`: colecciones
+  repetibles alimentadas desde `content.ts`.
+- `SectionHeader.astro`: encabezado compartido de sección.
+
+No se deben copiar textos de negocio dentro de los componentes ni crear una página por
+idioma. Antes de cambiar un breakpoint, conviene revisar tanto `390 × 844` como
+`1440 × 900` y ejecutar `npm run ci`.
+
+El diseño incluye una acción para descargar el currículum. No se renderiza todavía
+porque el repositorio no contiene el PDF definitivo; así se evita publicar un enlace
+roto. Cuando exista el archivo, debe añadirse a `public/` y enlazarse desde el hero.
+
 ## Estructura
 
 ```text
@@ -125,7 +147,8 @@ Para añadir otro idioma:
 │   ├── components/             # Estructura semántica compartida
 │   ├── i18n/                   # Configuración y contenido ES/EN/CA
 │   ├── layouts/                # HTML, SEO, canonical y hreflang
-│   └── pages/                  # Rutas estáticas
+│   ├── pages/                  # Rutas estáticas
+│   └── styles/                 # Tokens y estilos responsive compartidos
 ├── Dockerfile                  # Build multi-stage y runtime Nginx
 ├── nginx.conf                  # Servidor estático y health check
 └── package.json

@@ -12,7 +12,7 @@ const pages = [
     file: "dist/en/index.html",
     lang: "en",
     canonical: "https://ilopex.com/en/",
-    content: "Work experience",
+    content: "Professional experience",
   },
   {
     file: "dist/ca/index.html",

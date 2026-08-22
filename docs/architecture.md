@@ -2,8 +2,9 @@
 
 ## Objetivo
 
-Servir una web personal estática, multilingüe y fácil de mantener. En esta fase no se
-define el diseño visual.
+Servir una web personal estática, multilingüe y fácil de mantener. El diseño procede de
+la revisión 02 del archivo de Penpot `Nuevo Archivo 1` y se implementa con HTML
+semántico y CSS propio.
 
 ## Flujo de contenido
 
@@ -26,7 +27,16 @@ runtime, cookies de idioma ni estado de cliente.
 - `src/components`: estructura semántica compartida.
 - `src/layouts`: documento HTML, SEO, canonical y `hreflang`.
 - `src/pages`: entradas de routing; no contienen copy.
+- `src/styles`: tokens visuales y reglas responsive compartidas.
 - `public`: recursos que se copian sin transformación.
+
+Los componentes no conocen el idioma: reciben un `SiteContent` ya localizado. Las
+variantes desktop y mobile comparten el mismo marcado siempre que es posible; solo la
+experiencia muestra una síntesis específica en pantallas pequeñas para respetar la
+jerarquía definida en Penpot.
+
+Source Sans Pro se empaqueta durante el build mediante `@fontsource`, por lo que la web
+no depende de una CDN de tipografías.
 
 ## Despliegue
 

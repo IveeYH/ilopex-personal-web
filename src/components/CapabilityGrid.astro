@@ -1,0 +1,33 @@
+---
+import type { SiteContent } from "../i18n/content";
+
+interface Props {
+  capabilities: SiteContent["capabilities"];
+}
+
+const { capabilities } = Astro.props;
+---
+
+<div class="capability-grid">
+  {
+    capabilities.items.map((item) => (
+      <article class="card capability-card">
+        <h3>{item.title}</h3>
+        <dl>
+          <div>
+            <dt>{capabilities.labels.what}</dt>
+            <dd>{item.what}</dd>
+          </div>
+          <div>
+            <dt>{capabilities.labels.apply}</dt>
+            <dd>{item.apply}</dd>
+          </div>
+          <div>
+            <dt>{capabilities.labels.use}</dt>
+            <dd>{item.use}</dd>
+          </div>
+        </dl>
+      </article>
+    ))
+  }
+</div>
