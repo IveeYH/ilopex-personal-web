@@ -38,11 +38,22 @@ for (const page of pages) {
     html.includes("Data Architecture &amp; Strategy"),
     `${page.file} is missing the footer specialty`,
   );
+  assert.ok(
+    html.includes("Foundational Data Architecture"),
+    `${page.file} is missing the foundational architecture profile`,
+  );
 
-  for (const experienceId of ["astrazeneca", "iag"]) {
+  for (const experienceId of [
+    "astrazeneca",
+    "iag",
+    "isdin",
+    "penguin",
+    "primer-impacto",
+    "winche",
+  ]) {
     assert.ok(
       html.includes(`href="#experience-${experienceId}"`),
-      `${page.file} is missing the ${experienceId} context link`,
+      `${page.file} is missing a claim linked to ${experienceId}`,
     );
     assert.ok(
       html.includes(`id="experience-${experienceId}"`),

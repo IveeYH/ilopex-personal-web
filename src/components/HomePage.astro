@@ -4,6 +4,7 @@ import { content, profile } from "../i18n/content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import CapabilityGrid from "./CapabilityGrid.astro";
 import ExperienceList from "./ExperienceList.astro";
+import ExperienceReferences from "./ExperienceReferences.astro";
 import SectionHeader from "./SectionHeader.astro";
 import SiteHeader from "./SiteHeader.astro";
 import SkillsGrid from "./SkillsGrid.astro";
@@ -28,7 +29,12 @@ const copy = content[locale];
           <h1 id="page-title">{profile.name}</h1>
           <p class="hero__role">{copy.hero.role}</p>
           <p class="hero__location">{copy.hero.location}</p>
-          <p class="hero__statement">{copy.hero.statement}</p>
+          <p class="hero__statement">{copy.hero.statement.text}</p>
+          <ExperienceReferences
+            label={copy.experienceReferenceLabel}
+            references={copy.hero.statement.references}
+            className="experience-references--hero"
+          />
           <div class="hero__actions">
             <a class="button button--primary" href="#experience">
               {copy.hero.viewExperience}<span aria-hidden="true">→</span>
@@ -43,6 +49,10 @@ const copy = content[locale];
           <p class="eyebrow">{copy.hero.overviewLabel}</p>
           <p class="hero__overview-lead">{copy.hero.overview}</p>
           <p class="hero__overview-detail">{copy.hero.overviewDetail}</p>
+          <ExperienceReferences
+            label={copy.experienceReferenceLabel}
+            references={copy.hero.overviewReferences}
+          />
           <p class="detail-label hero__areas-label">{copy.hero.areasLabel}</p>
           <ul role="list">
             {
@@ -73,7 +83,13 @@ const copy = content[locale];
           <div class="profile-copy">
             {
               copy.professionalProfile.paragraphs.map((paragraph) => (
-                <p>{paragraph}</p>
+                <div class="profile-statement">
+                  <p>{paragraph.text}</p>
+                  <ExperienceReferences
+                    label={copy.experienceReferenceLabel}
+                    references={paragraph.references}
+                  />
+                </div>
               ))
             }
           </div>
@@ -84,14 +100,10 @@ const copy = content[locale];
                 <div>
                   <h3>{context.title}</h3>
                   <p>{context.detail}</p>
-                  <a
-                    class="detail-label leadership-context__source"
-                    href={`#experience-${context.experienceId}`}
-                  >
-                    {copy.professionalProfile.contextLinkLabel} ·{" "}
-                    {context.sourceLabel}
-                    <span aria-hidden="true">↓</span>
-                  </a>
+                  <ExperienceReferences
+                    label={copy.experienceReferenceLabel}
+                    references={context.references}
+                  />
                 </div>
               ))
             }
@@ -112,7 +124,15 @@ const copy = content[locale];
           intro={copy.capabilities.intro}
           titleId="capabilities-title"
         />
-        <CapabilityGrid capabilities={copy.capabilities} />
+        <ExperienceReferences
+          label={copy.experienceReferenceLabel}
+          references={copy.capabilities.references}
+          className="experience-references--section"
+        />
+        <CapabilityGrid
+          capabilities={copy.capabilities}
+          referenceLabel={copy.experienceReferenceLabel}
+        />
       </div>
     </section>
 
@@ -144,7 +164,15 @@ const copy = content[locale];
           intro={copy.skills.intro}
           titleId="skills-title"
         />
-        <SkillsGrid skills={copy.skills} />
+        <ExperienceReferences
+          label={copy.experienceReferenceLabel}
+          references={copy.skills.references}
+          className="experience-references--section"
+        />
+        <SkillsGrid
+          skills={copy.skills}
+          referenceLabel={copy.experienceReferenceLabel}
+        />
       </div>
     </section>
 

@@ -1,11 +1,13 @@
 ---
 import type { SiteContent } from "../i18n/content";
+import ExperienceReferences from "./ExperienceReferences.astro";
 
 interface Props {
   skills: SiteContent["skills"];
+  referenceLabel: string;
 }
 
-const { skills } = Astro.props;
+const { skills, referenceLabel } = Astro.props;
 ---
 
 <div class="skills-grid">
@@ -18,6 +20,10 @@ const { skills } = Astro.props;
         <h3>{item.technology}</h3>
         <p class="detail-label">{skills.applicationLabel}</p>
         <p>{item.application}</p>
+        <ExperienceReferences
+          label={referenceLabel}
+          references={item.references}
+        />
       </article>
     ))
   }
