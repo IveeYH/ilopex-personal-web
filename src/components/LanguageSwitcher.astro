@@ -11,8 +11,8 @@ interface Props {
 const { locale, label, names } = Astro.props;
 ---
 
-<nav aria-label={label}>
-  <ul>
+<nav class="language-switcher" aria-label={label}>
+  <ul role="list">
     {
       locales.map((targetLocale) => (
         <li>

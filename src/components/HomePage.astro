@@ -1,10 +1,12 @@
 ---
 import type { Locale } from "../i18n/config";
-import { localePath } from "../i18n/config";
 import { content, profile } from "../i18n/content";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import CapabilityGrid from "./CapabilityGrid.astro";
 import ExperienceList from "./ExperienceList.astro";
-import LanguageSwitcher from "./LanguageSwitcher.astro";
+import SectionHeader from "./SectionHeader.astro";
+import SiteHeader from "./SiteHeader.astro";
+import SkillsGrid from "./SkillsGrid.astro";
 
 interface Props {
   locale: Locale;
@@ -15,44 +17,188 @@ const copy = content[locale];
 ---
 
 <BaseLayout locale={locale} meta={copy.meta}>
-  <a href="#main-content">{copy.a11y.skipToContent}</a>
-
-  <header>
-    <a href={localePath(locale)}>{profile.name}</a>
-    <nav aria-label={copy.nav.label}>
-      <ul>
-        <li><a href={localePath(locale)}>{copy.nav.home}</a></li>
-        <li><a href="#experience">{copy.nav.experience}</a></li>
-      </ul>
-    </nav>
-    <LanguageSwitcher
-      locale={locale}
-      label={copy.nav.language}
-      names={copy.nav.languageNames}
-    />
-  </header>
+  <a class="skip-link" href="#main-content">{copy.a11y.skipToContent}</a>
+  <SiteHeader locale={locale} copy={copy} />
 
   <main id="main-content">
-    <section aria-labelledby="page-title">
-      <p>{copy.hero.role}</p>
-      <h1 id="page-title">{profile.name}</h1>
-      <p>{copy.hero.tagline}</p>
-      <p>{copy.hero.introduction}</p>
-      <ul>
-        <li>
-          <a href={profile.linkedIn} rel="me noopener" target="_blank">
-            {copy.hero.linkedIn}
-          </a>
-        </li>
-        <li><a href={`mailto:${profile.email}`}>{copy.hero.email}</a></li>
-      </ul>
+    <section class="hero section section--surface" aria-labelledby="page-title">
+      <div class="content-width hero__grid">
+        <div class="hero__primary">
+          <p class="eyebrow">{copy.hero.eyebrow}</p>
+          <h1 id="page-title">{profile.name}</h1>
+          <p class="hero__role">{copy.hero.role}</p>
+          <p class="hero__location">{copy.hero.location}</p>
+          <p class="hero__statement">{copy.hero.statement}</p>
+          <div class="hero__actions">
+            <a class="button button--primary" href="#experience">
+              {copy.hero.viewExperience}<span aria-hidden="true">→</span>
+            </a>
+            <a class="button button--secondary" href="#contact"
+              >{copy.hero.contact}</a
+            >
+          </div>
+        </div>
+
+        <aside class="hero__overview" aria-label={copy.hero.overviewLabel}>
+          <p class="eyebrow">{copy.hero.overviewLabel}</p>
+          <p class="hero__overview-lead">{copy.hero.overview}</p>
+          <p class="hero__overview-detail">{copy.hero.overviewDetail}</p>
+          <p class="detail-label hero__areas-label">{copy.hero.areasLabel}</p>
+          <ul role="list">
+            {
+              copy.hero.areas.map((area) => (
+                <li>
+                  {area}
+                  <span aria-hidden="true">•</span>
+                </li>
+              ))
+            }
+          </ul>
+        </aside>
+      </div>
     </section>
 
-    <ExperienceList experience={copy.experience} />
-  </main>
+    <section
+      id="profile"
+      class="section section--canvas"
+      aria-labelledby="profile-title"
+    >
+      <div class="content-width">
+        <SectionHeader
+          label={copy.professionalProfile.sectionLabel}
+          title={copy.professionalProfile.title}
+          titleId="profile-title"
+        />
+        <div class="profile-grid">
+          <div class="profile-copy">
+            {
+              copy.professionalProfile.paragraphs.map((paragraph) => (
+                <p>{paragraph}</p>
+              ))
+            }
+          </div>
+          <aside class="card leadership-context">
+            <p class="eyebrow">{copy.professionalProfile.contextLabel}</p>
+            {
+              copy.professionalProfile.contexts.map((context) => (
+                <div>
+                  <h3>{context.title}</h3>
+                  <p>{context.detail}</p>
+                  <a
+                    class="detail-label leadership-context__source"
+                    href={`#experience-${context.experienceId}`}
+                  >
+                    {copy.professionalProfile.contextLinkLabel} ·{" "}
+                    {context.sourceLabel}
+                    <span aria-hidden="true">↓</span>
+                  </a>
+                </div>
+              ))
+            }
+          </aside>
+        </div>
+      </div>
+    </section>
 
-  <footer>
-    <p>© {new Date().getFullYear()} {profile.name}</p>
-    <p>{copy.footer}</p>
-  </footer>
+    <section
+      id="capabilities"
+      class="section section--subtle"
+      aria-labelledby="capabilities-title"
+    >
+      <div class="content-width">
+        <SectionHeader
+          label={copy.capabilities.sectionLabel}
+          title={copy.capabilities.title}
+          intro={copy.capabilities.intro}
+          titleId="capabilities-title"
+        />
+        <CapabilityGrid capabilities={copy.capabilities} />
+      </div>
+    </section>
+
+    <section
+      id="experience"
+      class="section section--canvas"
+      aria-labelledby="experience-title"
+    >
+      <div class="content-width">
+        <SectionHeader
+          label={copy.experience.sectionLabel}
+          title={copy.experience.title}
+          intro={copy.experience.intro}
+          titleId="experience-title"
+        />
+        <ExperienceList experience={copy.experience} />
+      </div>
+    </section>
+
+    <section
+      id="skills"
+      class="section section--subtle"
+      aria-labelledby="skills-title"
+    >
+      <div class="content-width">
+        <SectionHeader
+          label={copy.skills.sectionLabel}
+          title={copy.skills.title}
+          intro={copy.skills.intro}
+          titleId="skills-title"
+        />
+        <SkillsGrid skills={copy.skills} />
+      </div>
+    </section>
+
+    <section
+      id="education"
+      class="section section--canvas"
+      aria-labelledby="education-title"
+    >
+      <div class="content-width">
+        <p class="eyebrow">{copy.education.sectionLabel}</p>
+        <div class="education-grid">
+          <h2 id="education-title">{copy.education.title}</h2>
+          <article class="card education-card">
+            <h3>{copy.education.degree}</h3>
+            <p>{copy.education.school}</p>
+            <dl>
+              <div>
+                <dt>{copy.education.gradeLabel}</dt>
+                <dd class="education-card__grade">{copy.education.grade}</dd>
+              </div>
+              <div>
+                <dt>{copy.education.recognitionLabel}</dt>
+                <dd>{copy.education.recognition}</dd>
+              </div>
+            </dl>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="contact"
+      class="section section--subtle contact"
+      aria-labelledby="contact-title"
+    >
+      <div class="content-width">
+        <p class="eyebrow">{copy.contact.sectionLabel}</p>
+        <article class="card contact-card">
+          <div>
+            <h2 id="contact-title">{copy.contact.title}</h2>
+            <p>{copy.contact.copy}</p>
+          </div>
+          <div class="contact-card__action">
+            <a class="button button--primary" href={`mailto:${profile.email}`}>
+              {copy.contact.emailAction}<span aria-hidden="true">→</span>
+            </a>
+            <a href={`mailto:${profile.email}`}>{profile.email}</a>
+          </div>
+        </article>
+        <footer class="site-footer">
+          <p>{copy.footer}</p>
+          <p class="detail-label">{copy.contact.privacy}</p>
+        </footer>
+      </div>
+    </section>
+  </main>
 </BaseLayout>
