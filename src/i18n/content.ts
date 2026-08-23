@@ -66,7 +66,13 @@ export interface SiteContent {
     title: string;
     paragraphs: string[];
     contextLabel: string;
-    contexts: Array<{ title: string; detail: string }>;
+    contextLinkLabel: string;
+    contexts: Array<{
+      title: string;
+      detail: string;
+      experienceId: string;
+      sourceLabel: string;
+    }>;
   };
   capabilities: {
     sectionLabel: string;
@@ -194,14 +200,19 @@ export const content = {
         "El enfoque convierte prioridades de negocio en decisiones operables: arquitecturas, hojas de ruta, estándares de ingeniería y modelos de responsabilidad que aclaran quién decide, quién entrega y quién opera cada servicio.",
       ],
       contextLabel: "CONTEXTO DE LIDERAZGO",
+      contextLinkLabel: "Experiencia relacionada",
       contexts: [
         {
           title: "Liderazgo de equipos globales",
           detail: "Hasta 25 ingenieros en Europa, Estados Unidos y Asia.",
+          experienceId: "astrazeneca",
+          sourceLabel: "AstraZeneca",
         },
         {
           title: "Liderazgo técnico transversal",
           detail: "Cinco equipos con más de 20 profesionales en IAG.",
+          experienceId: "iag",
+          sourceLabel: "IAG",
         },
       ],
     },
@@ -394,7 +405,8 @@ export const content = {
       emailAction: "Escribir a Iván",
       privacy: "El número de teléfono se omite en la versión pública.",
     },
-    footer: "Iván López López · Ingeniería de datos · Barcelona, España",
+    footer:
+      "Iván López López · Data Architecture & Strategy · Barcelona, España",
   },
   en: {
     meta: {
@@ -449,15 +461,20 @@ export const content = {
         "The approach turns business priorities into operable decisions: target architectures, roadmaps, engineering standards and accountability models that clarify decision-making, delivery and operation for each service.",
       ],
       contextLabel: "LEADERSHIP CONTEXT",
+      contextLinkLabel: "Related experience",
       contexts: [
         {
           title: "Global team leadership",
           detail:
             "Up to 25 engineers across Europe, the United States and Asia.",
+          experienceId: "astrazeneca",
+          sourceLabel: "AstraZeneca",
         },
         {
           title: "Cross-functional technical leadership",
           detail: "Five teams involving more than 20 professionals at IAG.",
+          experienceId: "iag",
+          sourceLabel: "IAG",
         },
       ],
     },
@@ -650,7 +667,8 @@ export const content = {
       emailAction: "Email Iván",
       privacy: "Phone number omitted from the public version.",
     },
-    footer: "Iván López López · Data Engineering · Barcelona, Spain",
+    footer:
+      "Iván López López · Data Architecture & Strategy · Barcelona, Spain",
   },
   ca: {
     meta: {
@@ -705,14 +723,19 @@ export const content = {
         "L'enfocament converteix prioritats de negoci en decisions operables: arquitectures, fulls de ruta, estàndards d'enginyeria i models de responsabilitat que aclareixen qui decideix, qui lliura i qui opera cada servei.",
       ],
       contextLabel: "CONTEXT DE LIDERATGE",
+      contextLinkLabel: "Experiència relacionada",
       contexts: [
         {
           title: "Lideratge d'equips globals",
           detail: "Fins a 25 enginyers a Europa, els Estats Units i Àsia.",
+          experienceId: "astrazeneca",
+          sourceLabel: "AstraZeneca",
         },
         {
           title: "Lideratge tècnic transversal",
           detail: "Cinc equips amb més de 20 professionals a IAG.",
+          experienceId: "iag",
+          sourceLabel: "IAG",
         },
       ],
     },
@@ -905,6 +928,7 @@ export const content = {
       emailAction: "Escriure a Iván",
       privacy: "El número de telèfon s'omet a la versió pública.",
     },
-    footer: "Iván López López · Enginyeria de dades · Barcelona, Espanya",
+    footer:
+      "Iván López López · Data Architecture & Strategy · Barcelona, Espanya",
   },
 } satisfies Record<Locale, SiteContent>;

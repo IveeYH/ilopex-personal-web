@@ -12,7 +12,11 @@ const { experience } = Astro.props;
   {
     experience.items.map((item) => (
       <li>
-        <article class="card experience-card">
+        <article
+          id={`experience-${item.id}`}
+          class="card experience-card"
+          tabindex="-1"
+        >
           <header class="experience-card__header">
             <div>
               <h3>{item.role}</h3>

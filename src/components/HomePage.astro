@@ -84,6 +84,14 @@ const copy = content[locale];
                 <div>
                   <h3>{context.title}</h3>
                   <p>{context.detail}</p>
+                  <a
+                    class="detail-label leadership-context__source"
+                    href={`#experience-${context.experienceId}`}
+                  >
+                    {copy.professionalProfile.contextLinkLabel} ·{" "}
+                    {context.sourceLabel}
+                    <span aria-hidden="true">↓</span>
+                  </a>
                 </div>
               ))
             }

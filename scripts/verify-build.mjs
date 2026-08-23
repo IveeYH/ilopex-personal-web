@@ -34,6 +34,21 @@ for (const page of pages) {
     html.includes(`rel="canonical" href="${page.canonical}"`),
     `${page.file} has an unexpected canonical URL`,
   );
+  assert.ok(
+    html.includes("Data Architecture &amp; Strategy"),
+    `${page.file} is missing the footer specialty`,
+  );
+
+  for (const experienceId of ["astrazeneca", "iag"]) {
+    assert.ok(
+      html.includes(`href="#experience-${experienceId}"`),
+      `${page.file} is missing the ${experienceId} context link`,
+    );
+    assert.ok(
+      html.includes(`id="experience-${experienceId}"`),
+      `${page.file} is missing the ${experienceId} experience target`,
+    );
+  }
 
   for (const alternate of ["es", "en", "ca", "x-default"]) {
     assert.ok(

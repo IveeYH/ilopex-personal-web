@@ -400,6 +400,19 @@ dt {
   line-height: 1.35;
 }
 
+.leadership-context__source {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-top: 14px;
+  text-decoration: none;
+}
+
+.leadership-context__source:hover {
+  text-decoration: underline;
+}
+
 #capabilities {
   padding: 72px 0 82px;
 }
@@ -459,6 +472,11 @@ dt {
   min-height: 400px;
   overflow: hidden;
   padding: 28px;
+  scroll-margin-top: 24px;
+}
+
+.experience-card:target {
+  border-color: var(--color-brand);
 }
 
 .experience-card::before,
