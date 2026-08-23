@@ -169,14 +169,14 @@ export const content = {
       role: "Associate Director, Data Engineering",
       location: "Barcelona, España",
       statement:
-        "Lidero equipos de ingeniería de datos y trabajo entre negocio y tecnología para definir cómo se diseñan, gobiernan, entregan y operan las plataformas y productos de datos.",
+        "Dirección de equipos globales de ingeniería de datos y definición del modelo con el que se diseñan, gobiernan, entregan y operan plataformas y productos entre negocio y tecnología.",
       viewExperience: "Ver experiencia",
       contact: "Contacto",
       overviewLabel: "RESUMEN PROFESIONAL",
       overview:
-        "Arquitectura de datos empresarial, plataformas cloud, estándares de ingeniería y continuidad del servicio en AWS, Azure y GCP.",
+        "Arquitectura de datos empresarial, plataformas en la nube, estándares de ingeniería y continuidad del servicio en AWS, Azure y GCP.",
       overviewDetail:
-        "Trabajo con Data Science & AI, Data Management, Enterprise Architecture, equipos de IT y stakeholders de negocio para convertir prioridades a largo plazo en arquitecturas, estándares de entrega y responsabilidades operativas.",
+        "Responsabilidad de convertir prioridades de Data Science & AI, Data Management, Enterprise Architecture, IT y negocio en arquitecturas, estándares de entrega y responsabilidades operativas sostenibles.",
       areasLabel: "ÁREAS DE TRABAJO",
       areas: [
         "Estrategia y arquitectura de datos",
@@ -190,8 +190,8 @@ export const content = {
       sectionLabel: "01 / PERFIL PROFESIONAL",
       title: "Perfil profesional",
       paragraphs: [
-        "Trabajo en el punto donde se encuentran la estrategia de datos, la entrega de ingeniería y las necesidades de negocio. Esto incluye definir la estrategia tecnológica con Data Science & AI, Data Management y Enterprise Architecture; liderar equipos distribuidos; y asumir la responsabilidad integral de plataformas críticas y productos de datos.",
-        "Mi función no se limita a seleccionar herramientas o diseñar sistemas. Convierto prioridades en arquitecturas, hojas de ruta, estándares de ingeniería y responsabilidades operativas que los equipos técnicos, los socios de negocio y la dirección pueden utilizar para tomar decisiones.",
+        "Trayectoria en la intersección entre estrategia de datos, entrega de ingeniería y necesidades de negocio. El alcance incluye definición de estrategia tecnológica junto a Data Science & AI, Data Management y Enterprise Architecture; liderazgo de equipos distribuidos; y responsabilidad integral sobre plataformas críticas y productos de datos.",
+        "El enfoque convierte prioridades de negocio en decisiones operables: arquitecturas, hojas de ruta, estándares de ingeniería y modelos de responsabilidad que aclaran quién decide, quién entrega y quién opera cada servicio.",
       ],
       contextLabel: "CONTEXTO DE LIDERAZGO",
       contexts: [
@@ -209,40 +209,40 @@ export const content = {
       sectionLabel: "02 / CAPACIDADES",
       title: "Capacidades y uso organizativo",
       intro:
-        "Cada capacidad describe el trabajo, cómo lo aplico y el papel que puede desempeñar dentro de una organización.",
+        "El alcance combina arquitectura objetivo, entrega de ingeniería, integración de datos y responsabilidad sobre el servicio, desde la planificación a largo plazo hasta la operación en producción.",
       labels: {
-        what: "QUÉ HAGO",
-        apply: "CÓMO LO APLICO",
-        use: "USO EN LA ORGANIZACIÓN",
+        what: "ÁMBITO",
+        apply: "APLICACIÓN",
+        use: "VALOR ORGANIZATIVO",
       },
       items: [
         {
           title: "Estrategia y arquitectura de datos",
-          what: "Defino la dirección tecnológica, arquitecturas objetivo y estándares de ingeniería para plataformas y productos de datos.",
+          what: "Definición de dirección tecnológica, arquitecturas objetivo y estándares de ingeniería para plataformas y productos de datos.",
           apply:
-            "Trabajo con Data Science & AI, Data Management, Enterprise Architecture, IT y stakeholders de negocio.",
-          use: "Doy a los equipos una dirección técnica compartida y mantengo las iniciativas alineadas con las prioridades de la organización.",
+            "Alineación de Data Science & AI, Data Management, Enterprise Architecture, IT y áreas de negocio sobre decisiones técnicas comunes.",
+          use: "Una dirección técnica compartida que evita iniciativas aisladas y mantiene la inversión en datos ligada a prioridades corporativas.",
         },
         {
           title: "Liderazgo y entrega de ingeniería",
-          what: "Lidero ingenieros de datos y coordino la entrega entre equipos, áreas de negocio y regiones.",
+          what: "Dirección de ingenieros de datos y coordinación de la entrega entre equipos, áreas de negocio y regiones.",
           apply:
-            "Defino hojas de ruta, patrones, ownership y prácticas de ingeniería conectando la entrega con las prioridades de los stakeholders.",
-          use: "Hago explícitas las responsabilidades y expectativas de entrega entre varios equipos.",
+            "Definición de hojas de ruta, patrones, responsabilidades y prácticas de ingeniería conectadas con las prioridades de las áreas implicadas.",
+          use: "Responsabilidades y expectativas de entrega explícitas, incluso cuando una iniciativa depende de varios equipos.",
         },
         {
           title: "Plataformas, productos e integración de datos",
-          what: "Diseño y superviso pipelines, productos de datos, APIs y servicios desde la ingesta hasta el consumo.",
+          what: "Diseño y supervisión de pipelines, productos de datos, APIs y servicios desde la ingesta hasta el consumo.",
           apply:
-            "Utilizo Python, SQL, Airflow, dbt y FastAPI con BigQuery, Snowflake y servicios cloud en AWS, Azure y GCP.",
-          use: "Proporciono bases de datos para analítica y uso operativo en distintas funciones de negocio.",
+            "Python, SQL, Airflow, dbt y FastAPI sobre BigQuery, Snowflake y servicios de AWS, Azure y GCP, seleccionados según el contexto operativo.",
+          use: "Bases fiables para analítica y procesos operativos, con capacidades reutilizables entre distintas funciones de negocio.",
         },
         {
           title: "Gobierno, fiabilidad y operación del servicio",
-          what: "Asumo la responsabilidad de seguridad, escalabilidad, resiliencia, calidad y continuidad en plataformas críticas.",
+          what: "Responsabilidad sobre seguridad, escalabilidad, resiliencia, calidad y continuidad de plataformas críticas.",
           apply:
-            "Combino gobierno, CI/CD, observabilidad, despliegue automatizado, mitigación de riesgos, recuperación y requisitos regulatorios.",
-          use: "Incorporo riesgo operativo, cumplimiento y continuidad del servicio en las decisiones de ingeniería desde el inicio.",
+            "Integración de gobierno, CI/CD, observabilidad, despliegue automatizado, mitigación de riesgos, recuperación y requisitos regulatorios.",
+          use: "Riesgo operativo, cumplimiento y continuidad incorporados al diseño, no añadidos después de poner el servicio en producción.",
         },
       ],
     },
@@ -250,7 +250,7 @@ export const content = {
       sectionLabel: "03 / EXPERIENCIA PROFESIONAL",
       title: "Experiencia profesional",
       intro:
-        "La evolución muestra cómo las responsabilidades de ingeniería práctica se ampliaron hacia arquitectura empresarial, liderazgo global, gobierno y estrategia de datos.",
+        "La trayectoria refleja un aumento progresivo del alcance: de construir pipelines y servicios a definir arquitectura empresarial, estrategia, gobierno y entrega global.",
       labels: {
         scope: "ALCANCE DEL PUESTO",
         approach: "RESPONSABILIDADES Y ENFOQUE",
@@ -260,51 +260,51 @@ export const content = {
         {
           ...identity(0),
           scope:
-            "Definí y ejecuté la estrategia tecnológica mientras lideraba la entrega global de plataformas críticas y productos de datos multidominio.",
+            "Definición y ejecución de la estrategia tecnológica, junto con la entrega global de plataformas críticas y productos de datos multidominio.",
           approach:
-            "Colaboré con Data Science & AI, Data Management y Enterprise Architecture; lideré hasta 25 ingenieros en Europa, Estados Unidos y Asia; y mantuve la responsabilidad integral de las plataformas.",
+            "Colaboración con Data Science & AI, Data Management y Enterprise Architecture; liderazgo de hasta 25 ingenieros en Europa, Estados Unidos y Asia; y responsabilidad integral sobre las plataformas.",
           application:
-            "Di soporte a Global Markets, R&D, Global Medical Affairs e IT-for-IT. Conecté tecnología y negocio y gestioné riesgos, continuidad, recuperación y cumplimiento regulatorio.",
+            "Soporte a Global Markets, R&D, Global Medical Affairs e IT-for-IT, conectando tecnología y negocio bajo un mismo modelo de riesgo, continuidad, recuperación y cumplimiento regulatorio.",
           compactScope:
             "Estrategia tecnológica, entrega global y responsabilidad sobre plataformas críticas y productos de datos multidominio.",
           compactApplication:
-            "Lideré hasta 25 ingenieros; alineé datos, AI y arquitectura; apoyé Markets, R&D, Medical Affairs e IT; y gestioné gobierno y continuidad.",
-          note: "Recibí reconocimiento corporativo por eficiencia operativa, impacto transversal y contribución estratégica dentro de la organización global de IT.",
+            "Liderazgo de hasta 25 ingenieros; alineación de datos, AI y arquitectura; soporte a Markets, R&D, Medical Affairs e IT; y gestión de gobierno y continuidad.",
+          note: "Reconocimiento corporativo por eficiencia operativa, impacto transversal y contribución estratégica dentro de la organización global de IT.",
         },
         {
           ...identity(1),
           scope:
-            "Proporcioné liderazgo técnico a cinco equipos transversales con más de 20 profesionales, centrados en la arquitectura de datos empresarial.",
+            "Liderazgo técnico de cinco equipos transversales con más de 20 profesionales, centrados en la arquitectura de datos empresarial.",
           approach:
-            "Diseñé arquitecturas distribuidas seguras para ingesta, calidad, transformación y consumo. Establecí estándares de CI/CD, observabilidad, seguridad y despliegue automatizado.",
+            "Diseño de arquitecturas distribuidas seguras para ingesta, calidad, transformación y consumo, con estándares comunes de CI/CD, observabilidad, seguridad y despliegue automatizado.",
           application:
-            "Trabajé con directores técnicos y stakeholders estratégicos para definir la visión tecnológica a largo plazo, prioridades de roadmap y evolución de producto.",
+            "Definición conjunta con directores técnicos y áreas estratégicas de la visión tecnológica a largo plazo, las prioridades de la hoja de ruta y la evolución de producto.",
           compactScope:
             "Arquitectura de datos empresarial para cinco equipos y más de 20 profesionales.",
           compactApplication:
-            "Arquitecturas distribuidas seguras, estándares de ingeniería y alineación del roadmap a largo plazo.",
+            "Arquitecturas distribuidas seguras, estándares de ingeniería y alineación de la hoja de ruta a largo plazo.",
         },
         {
           ...identity(2),
           scope:
-            "Dirigí el roadmap técnico y operativo del departamento de Data Engineering y establecí patrones de arquitectura, estándares y prácticas internas.",
+            "Dirección de la hoja de ruta técnica y operativa del departamento de Data Engineering y establecimiento de patrones de arquitectura, estándares y prácticas internas.",
           approach:
-            "Construí plataformas escalables en GCP atendiendo a seguridad, rendimiento y coste cloud. Lideré el equipo y prioricé la entrega con stakeholders de negocio.",
+            "Construcción de plataformas escalables en GCP con criterios de seguridad, rendimiento y coste; liderazgo del equipo y priorización de la entrega con las áreas de negocio.",
           application:
-            "Entregué soluciones de integración, automatización y analítica conectando las decisiones de plataforma con las necesidades del roadmap de producto.",
+            "Soluciones de integración, automatización y analítica que conectaron las decisiones de plataforma con las necesidades de la hoja de ruta de producto.",
           compactScope:
-            "Roadmap técnico y operativo del departamento de Data Engineering.",
+            "Hoja de ruta técnica y operativa del departamento de Data Engineering.",
           compactApplication:
             "Diseño de plataforma GCP, liderazgo de equipo, estándares internos y entrega alineada con negocio.",
         },
         {
           ...identity(3),
           scope:
-            "Diseñé pipelines de datos críticos en AWS y Azure con requisitos de disponibilidad, escalabilidad y seguridad.",
+            "Diseño de pipelines de datos críticos en AWS y Azure con requisitos de disponibilidad, escalabilidad y seguridad.",
           approach:
-            "Implementé arquitecturas Snowflake, pipelines de CI/CD y automatización. Desarrollé APIs y microservicios con Python y FastAPI.",
+            "Implementación de arquitecturas Snowflake, pipelines de CI/CD y automatización, además de APIs y microservicios con Python y FastAPI.",
           application:
-            "Apoyé la eficiencia operativa convirtiendo capacidades de datos en pipelines fiables y servicios orientados a producto.",
+            "Conversión de capacidades de datos en pipelines fiables y servicios orientados a producto para mejorar la eficiencia operativa.",
           compactScope: "Pipelines de datos críticos en AWS y Azure.",
           compactApplication:
             "Snowflake, CI/CD, automatización, APIs Python y microservicios FastAPI.",
@@ -312,11 +312,11 @@ export const content = {
         {
           ...identity(4),
           scope:
-            "Construí y aporté liderazgo técnico a un departamento de datos de nueva creación, formando la base tecnológica para la transformación digital.",
+            "Creación y liderazgo técnico de un nuevo departamento de datos que estableció la base tecnológica para la transformación digital.",
           approach:
-            "Desarrollé pipelines críticos con Python y Azure Data Factory y gestioné infraestructura de bases de datos para seguridad, disponibilidad y fiabilidad.",
+            "Desarrollo de pipelines críticos con Python y Azure Data Factory y gestión de infraestructura de bases de datos con criterios de seguridad, disponibilidad y fiabilidad.",
           application:
-            "Trabajé con unidades de negocio para definir requisitos de datos y soluciones técnicas alineadas con el crecimiento de la compañía.",
+            "Definición con las unidades de negocio de requisitos de datos y soluciones técnicas alineadas con el crecimiento de la compañía.",
           compactScope:
             "Creación del departamento de datos y de sus bases técnicas.",
           compactApplication:
@@ -325,14 +325,14 @@ export const content = {
         {
           ...identity(5),
           scope:
-            "Desarrollé soluciones ETL y de reporting con SSIS y C#, además de apoyar procesos de análisis de negocio.",
+            "Desarrollo de soluciones ETL y de informes con SSIS y C#, además de soporte a procesos de análisis de negocio.",
           approach:
-            "Diseñé cuadros de mando ejecutivos sobre KPIs de negocio, lideré un proyecto de transformación comercial y asumí la responsabilidad de la infraestructura de bases de datos.",
+            "Diseño de cuadros de mando ejecutivos sobre KPIs de negocio, liderazgo de un proyecto de transformación comercial y responsabilidad sobre la infraestructura de bases de datos.",
           application:
-            "Apliqué ingeniería y analítica de datos al reporting, el soporte a decisiones ejecutivas y las iniciativas de clientes empresariales.",
-          compactScope: "ETL, reporting y análisis de negocio con SSIS y C#.",
+            "Aplicación de ingeniería y analítica de datos a los informes, el soporte a decisiones ejecutivas y las iniciativas de clientes empresariales.",
+          compactScope: "ETL, informes y análisis de negocio con SSIS y C#.",
           compactApplication:
-            "Dashboards ejecutivos, transformación comercial y responsabilidad sobre la infraestructura de bases de datos.",
+            "Cuadros de mando ejecutivos, transformación comercial y responsabilidad sobre la infraestructura de bases de datos.",
         },
       ],
     },
@@ -340,46 +340,47 @@ export const content = {
       sectionLabel: "04 / COMPETENCIAS EN PRÁCTICA",
       title: "Competencias y forma de trabajo",
       intro:
-        "Uso la tecnología como parte de un sistema de ingeniería más amplio que incluye diseño de plataformas, entrega de software, gobierno y colaboración con las personas que dependen de los datos.",
-      applicationLabel: "CÓMO LO UTILIZO",
+        "El uso de la tecnología forma parte de un sistema de ingeniería que conecta diseño de plataformas, automatización de la entrega, gobierno del servicio y coordinación de las áreas que producen y consumen datos.",
+      applicationLabel: "APLICACIÓN",
       items: [
         {
           category: "INGENIERÍA DE DATOS",
           technology: "Python · SQL · Airflow · dbt",
           application:
-            "Ingesta, transformación, orquestación y flujos de calidad del dato.",
+            "Construcción de flujos de ingesta, transformación, orquestación y calidad que hacen trazable el recorrido del dato.",
         },
         {
           category: "SERVICIOS DE DATOS",
           technology: "FastAPI · Microservicios",
           application:
-            "Pongo capacidades de datos a disposición de productos y consumidores internos mediante servicios mantenibles.",
+            "Exposición de capacidades de datos mediante servicios mantenibles para productos y consumidores internos.",
         },
         {
-          category: "CLOUD Y PLATAFORMAS DE DATOS",
+          category: "NUBE Y PLATAFORMAS DE DATOS",
           technology: "BigQuery · Snowflake · AWS · Azure · GCP",
           application:
-            "Almacenamiento, procesamiento y arquitectura de plataforma según los requisitos del dominio y de operación.",
+            "Selección de almacenamiento, procesamiento y arquitectura según los requisitos de cada dominio, su escala y su modelo operativo.",
         },
         {
           category: "ENTREGA Y OPERACIONES",
           technology: "CI/CD · GitHub · Docker",
           application:
-            "Flujos de ingeniería versionados, repetibles y automatizados con un ownership operativo más claro.",
+            "Entrega versionada, repetible y automatizada que reduce cambios manuales y hace explícita la responsabilidad operativa.",
         },
         {
           category: "LIDERAZGO Y ORGANIZACIÓN",
           technology:
-            "Liderazgo técnico · Comunicación transversal · Gestión de stakeholders · Planificación estratégica · Ownership integral · Resolución de problemas complejos",
+            "Liderazgo técnico y organizativo · Comunicación transversal · Gestión de áreas implicadas · Planificación estratégica · Responsabilidad integral · Resolución de problemas complejos",
           application:
-            "Alineo roadmaps, coordino equipos y stakeholders, aclaro el ownership y mantengo la responsabilidad desde el diseño técnico hasta la operación del servicio.",
+            "Alineación de hojas de ruta, equipos y áreas implicadas para mantener las decisiones y la responsabilidad desde el diseño técnico hasta la operación del servicio.",
         },
       ],
     },
     education: {
       sectionLabel: "05 / FORMACIÓN",
       title: "Formación",
-      degree: "Grado Superior en Desarrollo de Aplicaciones Informáticas",
+      degree:
+        "Grado Superior de Administración de Sistemas Informáticos y Redes",
       school: "Colegio Cultural",
       gradeLabel: "NOTA",
       grade: "8/10",
@@ -389,7 +390,7 @@ export const content = {
     contact: {
       sectionLabel: "06 / CONTACTO",
       title: "Contacto",
-      copy: "Vivo en Barcelona, España. Si tu organización trabaja en estrategia de datos, arquitectura, entrega de plataformas o modelos operativos de ingeniería de datos, puedes escribirme por correo.",
+      copy: "Perfil profesional con base en Barcelona, España. Contacto para organizaciones con necesidades en estrategia de datos, arquitectura, entrega de plataformas o modelos operativos de ingeniería de datos.",
       emailAction: "Escribir a Iván",
       privacy: "El número de teléfono se omite en la versión pública.",
     },
@@ -423,14 +424,14 @@ export const content = {
       role: "Associate Director, Data Engineering",
       location: "Barcelona, Spain",
       statement:
-        "I lead data engineering teams and work across business and technology functions to define how data platforms and products are designed, governed, delivered and operated.",
+        "Leadership of global data engineering teams and definition of the operating model used to design, govern, deliver and run platforms and products across business and technology.",
       viewExperience: "View experience",
       contact: "Contact",
       overviewLabel: "PROFESSIONAL OVERVIEW",
       overview:
         "Enterprise data architecture, cloud platforms, engineering standards and service continuity across AWS, Azure and GCP.",
       overviewDetail:
-        "I work with Data Science & AI, Data Management, Enterprise Architecture, IT partners and business stakeholders to translate long-term priorities into architectures, delivery standards and operating responsibilities.",
+        "Responsibility for translating priorities from Data Science & AI, Data Management, Enterprise Architecture, IT and business into sustainable architectures, delivery standards and operating responsibilities.",
       areasLabel: "AREAS OF WORK",
       areas: [
         "Data strategy and architecture",
@@ -444,8 +445,8 @@ export const content = {
       sectionLabel: "01 / PROFESSIONAL PROFILE",
       title: "Professional profile",
       paragraphs: [
-        "I work at the point where data strategy, engineering delivery and business needs meet. This has included defining technology strategy with Data Science & AI, Data Management and Enterprise Architecture; leading distributed engineering teams; and taking end-to-end responsibility for critical platforms and data products.",
-        "My role is not limited to selecting tools or designing systems. I translate priorities into architectures, team roadmaps, engineering standards and operational responsibilities that technical teams, business partners and senior stakeholders can use to make decisions.",
+        "A career at the intersection of data strategy, engineering delivery and business needs. The scope includes defining technology strategy with Data Science & AI, Data Management and Enterprise Architecture; leading distributed teams; and holding end-to-end accountability for critical platforms and data products.",
+        "The approach turns business priorities into operable decisions: target architectures, roadmaps, engineering standards and accountability models that clarify decision-making, delivery and operation for each service.",
       ],
       contextLabel: "LEADERSHIP CONTEXT",
       contexts: [
@@ -464,40 +465,40 @@ export const content = {
       sectionLabel: "02 / CAPABILITIES",
       title: "Capabilities and organizational use",
       intro:
-        "Each capability describes the work itself, how it is applied, and the role it can play inside a company.",
+        "The scope combines target architecture, engineering delivery, data integration and service accountability, from long-term planning through production operation.",
       labels: {
-        what: "WHAT I DO",
-        apply: "HOW I APPLY IT",
-        use: "USE WITHIN AN ORGANIZATION",
+        what: "SCOPE",
+        apply: "APPLICATION",
+        use: "ORGANIZATIONAL VALUE",
       },
       items: [
         {
           title: "Data strategy and architecture",
-          what: "Define technology direction, target architectures and engineering standards for data platforms and products.",
+          what: "Definition of technology direction, target architectures and engineering standards for data platforms and products.",
           apply:
-            "Work with Data Science & AI, Data Management, Enterprise Architecture, IT partners and business stakeholders.",
-          use: "Give teams a shared technical direction and keep data initiatives aligned with organizational priorities.",
+            "Alignment of Data Science & AI, Data Management, Enterprise Architecture, IT and business stakeholders around shared technical decisions.",
+          use: "A shared technical direction that prevents isolated initiatives and keeps data investment tied to corporate priorities.",
         },
         {
           title: "Engineering leadership and delivery",
-          what: "Lead data engineers and coordinate delivery across teams, business areas and regions.",
+          what: "Leadership of data engineers and coordination of delivery across teams, business areas and regions.",
           apply:
-            "Define roadmaps, patterns, ownership and engineering practices while connecting delivery with stakeholder priorities.",
-          use: "Make responsibilities and delivery expectations explicit across multiple teams.",
+            "Definition of roadmaps, patterns, accountability and engineering practices connected to stakeholder priorities.",
+          use: "Explicit responsibilities and delivery expectations, including initiatives that depend on multiple teams.",
         },
         {
           title: "Data platforms, products and integration",
-          what: "Design and oversee pipelines, data products, APIs and services from ingestion through consumption.",
+          what: "Design and oversight of pipelines, data products, APIs and services from ingestion through consumption.",
           apply:
-            "Use Python, SQL, Airflow, dbt and FastAPI with BigQuery, Snowflake and cloud services on AWS, Azure and GCP.",
-          use: "Provide data foundations for analytics and operational use across different business functions.",
+            "Python, SQL, Airflow, dbt and FastAPI across BigQuery, Snowflake and AWS, Azure and GCP services, selected for the operating context.",
+          use: "Reliable foundations for analytics and operational processes, with capabilities reusable across business functions.",
         },
         {
           title: "Governance, reliability and service operation",
-          what: "Take responsibility for security, scalability, resilience, data quality and continuity on critical platforms.",
+          what: "Accountability for security, scalability, resilience, data quality and continuity across critical platforms.",
           apply:
-            "Combine governance, CI/CD, observability, automated deployment, risk mitigation, recovery and regulatory requirements.",
-          use: "Include operational risk, compliance and service continuity in engineering decisions from the start.",
+            "Integration of governance, CI/CD, observability, automated deployment, risk mitigation, recovery and regulatory requirements.",
+          use: "Operational risk, compliance and continuity built into the design rather than added after production release.",
         },
       ],
     },
@@ -505,7 +506,7 @@ export const content = {
       sectionLabel: "03 / PROFESSIONAL EXPERIENCE",
       title: "Professional experience",
       intro:
-        "The progression below shows how hands-on engineering responsibilities developed into enterprise architecture, global leadership, governance and data strategy.",
+        "Career progression from building pipelines and services to defining enterprise architecture, strategy, governance and global delivery.",
       labels: {
         scope: "SCOPE OF THE ROLE",
         approach: "RESPONSIBILITIES & APPROACH",
@@ -515,25 +516,25 @@ export const content = {
         {
           ...identity(0),
           scope:
-            "Defined and executed technology strategy while leading global delivery for critical data platforms and multi-domain data products.",
+            "Definition and execution of technology strategy, alongside global delivery of critical platforms and multi-domain data products.",
           approach:
-            "Partnered with Data Science & AI, Data Management and Enterprise Architecture; led up to 25 engineers across Europe, the US and Asia; maintained end-to-end platform accountability.",
+            "Collaboration with Data Science & AI, Data Management and Enterprise Architecture; leadership of up to 25 engineers across Europe, the United States and Asia; and end-to-end platform accountability.",
           application:
-            "Supported Global Markets, R&D, Global Medical Affairs and IT-for-IT. Connected technology and business stakeholders and managed risk, continuity, recovery and regulatory compliance.",
+            "Support for Global Markets, R&D, Global Medical Affairs and IT-for-IT, connecting technology and business through a common model for risk, continuity, recovery and regulatory compliance.",
           compactScope:
             "Technology strategy, global delivery and responsibility for critical platforms and multi-domain data products.",
           compactApplication:
-            "Led up to 25 engineers; aligned data, AI and architecture functions; supported Markets, R&D, Medical Affairs and IT; managed governance and continuity.",
-          note: "Received corporate recognition for operational efficiency, cross-functional impact and strategic contribution within the global IT organization.",
+            "Leadership of up to 25 engineers; alignment of data, AI and architecture; support for Markets, R&D, Medical Affairs and IT; and management of governance and continuity.",
+          note: "Corporate recognition for operational efficiency, cross-functional impact and strategic contribution within the global IT organization.",
         },
         {
           ...identity(1),
           scope:
-            "Provided technical leadership for five cross-functional teams involving more than 20 professionals, focused on the core enterprise data architecture.",
+            "Technical leadership of five cross-functional teams involving more than 20 professionals, focused on enterprise data architecture.",
           approach:
-            "Designed secure distributed architectures for ingestion, quality, transformation and consumption. Established standards for CI/CD, observability, security and automated deployment.",
+            "Design of secure distributed architectures for ingestion, quality, transformation and consumption, with shared standards for CI/CD, observability, security and automated deployment.",
           application:
-            "Worked with technical directors and strategic stakeholders to define long-term technology vision, roadmap priorities and product evolution.",
+            "Joint definition with technical directors and strategic stakeholders of the long-term technology vision, roadmap priorities and product evolution.",
           compactScope:
             "Core enterprise data architecture across five teams and more than 20 professionals.",
           compactApplication:
@@ -542,11 +543,11 @@ export const content = {
         {
           ...identity(2),
           scope:
-            "Directed the technical and operational roadmap of the Data Engineering department and established architecture patterns, standards and internal practices.",
+            "Direction of the Data Engineering department’s technical and operational roadmap and establishment of architecture patterns, standards and internal practices.",
           approach:
-            "Built scalable GCP platforms with attention to security, performance and cloud cost. Led the engineering team and prioritized delivery with business stakeholders.",
+            "Construction of scalable GCP platforms with security, performance and cloud-cost criteria; team leadership; and delivery prioritization with business stakeholders.",
           application:
-            "Delivered data integration, automation and analytics solutions while connecting platform decisions to product roadmap needs.",
+            "Integration, automation and analytics solutions connecting platform decisions with product-roadmap needs.",
           compactScope:
             "Technical and operational roadmap for the Data Engineering department.",
           compactApplication:
@@ -555,11 +556,11 @@ export const content = {
         {
           ...identity(3),
           scope:
-            "Designed mission-critical data pipelines across AWS and Azure with requirements for availability, scalability and security.",
+            "Design of mission-critical data pipelines across AWS and Azure with availability, scalability and security requirements.",
           approach:
-            "Implemented Snowflake-based data architectures, CI/CD pipelines and automation workflows. Developed APIs and microservices using Python and FastAPI.",
+            "Implementation of Snowflake architectures, CI/CD pipelines and automation, alongside APIs and microservices built with Python and FastAPI.",
           application:
-            "Supported operational efficiency by turning data capabilities into reliable pipelines and product-oriented services.",
+            "Conversion of data capabilities into reliable pipelines and product-oriented services to improve operational efficiency.",
           compactScope: "Mission-critical data pipelines across AWS and Azure.",
           compactApplication:
             "Snowflake, CI/CD, automation, Python APIs and FastAPI microservices.",
@@ -567,11 +568,11 @@ export const content = {
         {
           ...identity(4),
           scope:
-            "Built and provided technical leadership for a newly established data department, forming the technical base for digital transformation.",
+            "Creation and technical leadership of a new data department that established the technology foundation for digital transformation.",
           approach:
-            "Developed critical pipelines with Python and Azure Data Factory and managed database infrastructure for security, availability and reliability.",
+            "Development of critical pipelines with Python and Azure Data Factory and management of database infrastructure for security, availability and reliability.",
           application:
-            "Worked with business units to define data requirements and technical solutions aligned with company growth.",
+            "Joint definition with business units of data requirements and technical solutions aligned with company growth.",
           compactScope:
             "Established the company’s data department and its technical foundations.",
           compactApplication:
@@ -580,11 +581,11 @@ export const content = {
         {
           ...identity(5),
           scope:
-            "Developed ETL and reporting solutions using SSIS and C# and supported business analysis processes.",
+            "Development of ETL and reporting solutions with SSIS and C#, alongside support for business-analysis processes.",
           approach:
-            "Designed executive dashboards around business KPIs, led a commercial transformation project and held responsibility for database infrastructure.",
+            "Design of executive dashboards based on business KPIs, leadership of a commercial-transformation project and accountability for database infrastructure.",
           application:
-            "Applied data engineering and analytics to reporting, executive decision support and enterprise client initiatives.",
+            "Application of data engineering and analytics to reporting, executive decision support and enterprise-client initiatives.",
           compactScope:
             "ETL, reporting and business analysis using SSIS and C#.",
           compactApplication:
@@ -596,46 +597,46 @@ export const content = {
       sectionLabel: "04 / SKILLS IN PRACTICE",
       title: "Skills and working approach",
       intro:
-        "I use technology as part of a broader engineering system that includes platform design, software delivery, governance and collaboration with the people who depend on the data.",
-      applicationLabel: "HOW I USE IT",
+        "Technology forms part of an engineering system that connects platform design, delivery automation, service governance and coordination of the teams that produce and consume data.",
+      applicationLabel: "APPLICATION",
       items: [
         {
           category: "DATA ENGINEERING",
           technology: "Python · SQL · Airflow · dbt",
           application:
-            "Data ingestion, transformation, orchestration and quality workflows.",
+            "Ingestion, transformation, orchestration and quality workflows that make the data journey traceable.",
         },
         {
           category: "DATA SERVICES",
           technology: "FastAPI · Microservices",
           application:
-            "Make data capabilities available to products and internal consumers through maintainable services.",
+            "Maintainable services that expose data capabilities to products and internal consumers.",
         },
         {
           category: "CLOUD AND DATA PLATFORMS",
           technology: "BigQuery · Snowflake · AWS · Azure · GCP",
           application:
-            "Data storage, processing and platform architecture selected according to domain and operating requirements.",
+            "Storage, processing and platform architecture selected according to each domain, its scale and its operating model.",
         },
         {
           category: "DELIVERY AND OPERATIONS",
           technology: "CI/CD · GitHub · Docker",
           application:
-            "Versioned, repeatable and automated engineering workflows with clearer operational ownership.",
+            "Versioned, repeatable and automated delivery that reduces manual changes and makes operational accountability explicit.",
         },
         {
           category: "LEADERSHIP AND ORGANIZATION",
           technology:
             "Technical & Organizational Leadership · Cross-functional Communication · Stakeholder Management · Strategic Planning · End-to-end Ownership · Complex Problem Solving",
           application:
-            "Align roadmaps, coordinate teams and stakeholders, clarify ownership and maintain responsibility from technical design through service operation.",
+            "Alignment of roadmaps, teams and stakeholders to preserve decision ownership and accountability from technical design through service operation.",
         },
       ],
     },
     education: {
       sectionLabel: "05 / EDUCATION",
       title: "Education",
-      degree: "Advanced Vocational Degree in Computer Science",
+      degree: "Higher Technician in Computer Network Systems Management",
       school: "Colegio Cultural",
       gradeLabel: "GPA",
       grade: "8/10",
@@ -645,7 +646,7 @@ export const content = {
     contact: {
       sectionLabel: "06 / CONTACT",
       title: "Contact",
-      copy: "I am based in Barcelona, Spain. If your organization is working on data strategy, architecture, platform delivery or the operating model around data engineering, you can contact me by email.",
+      copy: "Professional profile based in Barcelona, Spain. Contact for organizations with needs in data strategy, architecture, platform delivery or data-engineering operating models.",
       emailAction: "Email Iván",
       privacy: "Phone number omitted from the public version.",
     },
@@ -679,14 +680,14 @@ export const content = {
       role: "Associate Director, Data Engineering",
       location: "Barcelona, Espanya",
       statement:
-        "Lidero equips d'enginyeria de dades i treballo entre negoci i tecnologia per definir com es dissenyen, governen, lliuren i operen les plataformes i els productes de dades.",
+        "Direcció d'equips globals d'enginyeria de dades i definició del model amb què es dissenyen, governen, lliuren i operen plataformes i productes entre negoci i tecnologia.",
       viewExperience: "Veure experiència",
       contact: "Contacte",
       overviewLabel: "RESUM PROFESSIONAL",
       overview:
-        "Arquitectura de dades empresarial, plataformes cloud, estàndards d'enginyeria i continuïtat del servei a AWS, Azure i GCP.",
+        "Arquitectura de dades empresarial, plataformes al núvol, estàndards d'enginyeria i continuïtat del servei a AWS, Azure i GCP.",
       overviewDetail:
-        "Treballo amb Data Science & AI, Data Management, Enterprise Architecture, equips d'IT i stakeholders de negoci per convertir prioritats a llarg termini en arquitectures, estàndards de lliurament i responsabilitats operatives.",
+        "Responsabilitat de convertir prioritats de Data Science & AI, Data Management, Enterprise Architecture, IT i negoci en arquitectures, estàndards de lliurament i responsabilitats operatives sostenibles.",
       areasLabel: "ÀREES DE TREBALL",
       areas: [
         "Estratègia i arquitectura de dades",
@@ -700,8 +701,8 @@ export const content = {
       sectionLabel: "01 / PERFIL PROFESSIONAL",
       title: "Perfil professional",
       paragraphs: [
-        "Treballo al punt on es troben l'estratègia de dades, el lliurament d'enginyeria i les necessitats de negoci. Això inclou definir l'estratègia tecnològica amb Data Science & AI, Data Management i Enterprise Architecture; liderar equips distribuïts; i assumir la responsabilitat integral de plataformes crítiques i productes de dades.",
-        "La meva funció no es limita a seleccionar eines o dissenyar sistemes. Converteixo prioritats en arquitectures, fulls de ruta, estàndards d'enginyeria i responsabilitats operatives que els equips tècnics, els socis de negoci i la direcció poden utilitzar per prendre decisions.",
+        "Trajectòria en la intersecció entre estratègia de dades, lliurament d'enginyeria i necessitats de negoci. L'abast inclou la definició d'estratègia tecnològica amb Data Science & AI, Data Management i Enterprise Architecture; el lideratge d'equips distribuïts; i la responsabilitat integral sobre plataformes crítiques i productes de dades.",
+        "L'enfocament converteix prioritats de negoci en decisions operables: arquitectures, fulls de ruta, estàndards d'enginyeria i models de responsabilitat que aclareixen qui decideix, qui lliura i qui opera cada servei.",
       ],
       contextLabel: "CONTEXT DE LIDERATGE",
       contexts: [
@@ -719,40 +720,40 @@ export const content = {
       sectionLabel: "02 / CAPACITATS",
       title: "Capacitats i ús organitzatiu",
       intro:
-        "Cada capacitat descriu la feina, com l'aplico i el paper que pot tenir dins d'una organització.",
+        "L'abast combina arquitectura objectiu, lliurament d'enginyeria, integració de dades i responsabilitat sobre el servei, des de la planificació a llarg termini fins a l'operació en producció.",
       labels: {
-        what: "QUÈ FAIG",
-        apply: "COM HO APLICO",
-        use: "ÚS A L'ORGANITZACIÓ",
+        what: "ÀMBIT",
+        apply: "APLICACIÓ",
+        use: "VALOR ORGANITZATIU",
       },
       items: [
         {
           title: "Estratègia i arquitectura de dades",
-          what: "Defineixo la direcció tecnològica, arquitectures objectiu i estàndards d'enginyeria per a plataformes i productes de dades.",
+          what: "Definició de la direcció tecnològica, arquitectures objectiu i estàndards d'enginyeria per a plataformes i productes de dades.",
           apply:
-            "Treballo amb Data Science & AI, Data Management, Enterprise Architecture, IT i stakeholders de negoci.",
-          use: "Dono als equips una direcció tècnica compartida i mantinc les iniciatives alineades amb les prioritats de l'organització.",
+            "Alineació de Data Science & AI, Data Management, Enterprise Architecture, IT i àrees de negoci al voltant de decisions tècniques comunes.",
+          use: "Una direcció tècnica compartida que evita iniciatives aïllades i manté la inversió en dades vinculada a prioritats corporatives.",
         },
         {
           title: "Lideratge i lliurament d'enginyeria",
-          what: "Lidero enginyers de dades i coordino el lliurament entre equips, àrees de negoci i regions.",
+          what: "Direcció d'enginyers de dades i coordinació del lliurament entre equips, àrees de negoci i regions.",
           apply:
-            "Defineixo fulls de ruta, patrons, ownership i pràctiques d'enginyeria connectant el lliurament amb les prioritats dels stakeholders.",
-          use: "Faig explícites les responsabilitats i expectatives de lliurament entre diversos equips.",
+            "Definició de fulls de ruta, patrons, responsabilitats i pràctiques d'enginyeria connectades amb les prioritats de les àrees implicades.",
+          use: "Responsabilitats i expectatives de lliurament explícites, també quan una iniciativa depèn de diversos equips.",
         },
         {
           title: "Plataformes, productes i integració de dades",
-          what: "Dissenyo i superviso pipelines, productes de dades, APIs i serveis des de la ingesta fins al consum.",
+          what: "Disseny i supervisió de canalitzacions de dades, productes, APIs i serveis des de la ingesta fins al consum.",
           apply:
-            "Utilitzo Python, SQL, Airflow, dbt i FastAPI amb BigQuery, Snowflake i serveis cloud a AWS, Azure i GCP.",
-          use: "Proporciono bases de dades per a analítica i ús operatiu en diferents funcions de negoci.",
+            "Python, SQL, Airflow, dbt i FastAPI sobre BigQuery, Snowflake i serveis d'AWS, Azure i GCP, seleccionats segons el context operatiu.",
+          use: "Bases fiables per a analítica i processos operatius, amb capacitats reutilitzables entre diferents funcions de negoci.",
         },
         {
           title: "Govern, fiabilitat i operació del servei",
-          what: "Assumeixo la responsabilitat de seguretat, escalabilitat, resiliència, qualitat i continuïtat en plataformes crítiques.",
+          what: "Responsabilitat sobre seguretat, escalabilitat, resiliència, qualitat i continuïtat de plataformes crítiques.",
           apply:
-            "Combino govern, CI/CD, observabilitat, desplegament automatitzat, mitigació de riscos, recuperació i requisits reguladors.",
-          use: "Incorporo risc operatiu, compliment i continuïtat del servei en les decisions d'enginyeria des del principi.",
+            "Integració de govern, CI/CD, observabilitat, desplegament automatitzat, mitigació de riscos, recuperació i requisits reguladors.",
+          use: "Risc operatiu, compliment i continuïtat incorporats al disseny, no afegits després de posar el servei en producció.",
         },
       ],
     },
@@ -760,7 +761,7 @@ export const content = {
       sectionLabel: "03 / EXPERIÈNCIA PROFESSIONAL",
       title: "Experiència professional",
       intro:
-        "L'evolució mostra com les responsabilitats d'enginyeria pràctica es van ampliar cap a arquitectura empresarial, lideratge global, govern i estratègia de dades.",
+        "La trajectòria reflecteix un augment progressiu de l'abast: des de construir canalitzacions i serveis fins a definir arquitectura empresarial, estratègia, govern i lliurament global.",
       labels: {
         scope: "ABAST DEL LLOC",
         approach: "RESPONSABILITATS I ENFOCAMENT",
@@ -770,79 +771,79 @@ export const content = {
         {
           ...identity(0),
           scope:
-            "Vaig definir i executar l'estratègia tecnològica mentre liderava el lliurament global de plataformes crítiques i productes de dades multidomini.",
+            "Definició i execució de l'estratègia tecnològica, juntament amb el lliurament global de plataformes crítiques i productes de dades multidomini.",
           approach:
-            "Vaig col·laborar amb Data Science & AI, Data Management i Enterprise Architecture; vaig liderar fins a 25 enginyers a Europa, els Estats Units i Àsia; i vaig mantenir la responsabilitat integral de les plataformes.",
+            "Col·laboració amb Data Science & AI, Data Management i Enterprise Architecture; lideratge de fins a 25 enginyers a Europa, els Estats Units i Àsia; i responsabilitat integral sobre les plataformes.",
           application:
-            "Vaig donar suport a Global Markets, R&D, Global Medical Affairs i IT-for-IT. Vaig connectar tecnologia i negoci i vaig gestionar riscos, continuïtat, recuperació i compliment regulador.",
+            "Suport a Global Markets, R&D, Global Medical Affairs i IT-for-IT, connectant tecnologia i negoci sota un mateix model de risc, continuïtat, recuperació i compliment regulador.",
           compactScope:
             "Estratègia tecnològica, lliurament global i responsabilitat sobre plataformes crítiques i productes de dades multidomini.",
           compactApplication:
-            "Vaig liderar fins a 25 enginyers; vaig alinear dades, AI i arquitectura; vaig donar suport a Markets, R&D, Medical Affairs i IT; i vaig gestionar govern i continuïtat.",
-          note: "Vaig rebre reconeixement corporatiu per eficiència operativa, impacte transversal i contribució estratègica dins de l'organització global d'IT.",
+            "Lideratge de fins a 25 enginyers; alineació de dades, AI i arquitectura; suport a Markets, R&D, Medical Affairs i IT; i gestió de govern i continuïtat.",
+          note: "Reconeixement corporatiu per eficiència operativa, impacte transversal i contribució estratègica dins de l'organització global d'IT.",
         },
         {
           ...identity(1),
           scope:
-            "Vaig proporcionar lideratge tècnic a cinc equips transversals amb més de 20 professionals centrats en l'arquitectura de dades empresarial.",
+            "Lideratge tècnic de cinc equips transversals amb més de 20 professionals, centrats en l'arquitectura de dades empresarial.",
           approach:
-            "Vaig dissenyar arquitectures distribuïdes segures per a ingesta, qualitat, transformació i consum. Vaig establir estàndards de CI/CD, observabilitat, seguretat i desplegament automatitzat.",
+            "Disseny d'arquitectures distribuïdes segures per a ingesta, qualitat, transformació i consum, amb estàndards comuns de CI/CD, observabilitat, seguretat i desplegament automatitzat.",
           application:
-            "Vaig treballar amb directors tècnics i stakeholders estratègics per definir la visió tecnològica a llarg termini, prioritats de roadmap i evolució de producte.",
+            "Definició conjunta amb directors tècnics i parts interessades estratègiques de la visió tecnològica a llarg termini, les prioritats del full de ruta i l'evolució de producte.",
           compactScope:
             "Arquitectura de dades empresarial per a cinc equips i més de 20 professionals.",
           compactApplication:
-            "Arquitectures distribuïdes segures, estàndards d'enginyeria i alineació del roadmap a llarg termini.",
+            "Arquitectures distribuïdes segures, estàndards d'enginyeria i alineació del full de ruta a llarg termini.",
         },
         {
           ...identity(2),
           scope:
-            "Vaig dirigir el roadmap tècnic i operatiu del departament de Data Engineering i vaig establir patrons d'arquitectura, estàndards i pràctiques internes.",
+            "Direcció del full de ruta tècnic i operatiu del departament de Data Engineering i establiment de patrons d'arquitectura, estàndards i pràctiques internes.",
           approach:
-            "Vaig construir plataformes escalables a GCP atenent seguretat, rendiment i cost cloud. Vaig liderar l'equip i vaig prioritzar el lliurament amb stakeholders de negoci.",
+            "Construcció de plataformes escalables a GCP amb criteris de seguretat, rendiment i cost; lideratge de l'equip; i priorització del lliurament amb les àrees de negoci.",
           application:
-            "Vaig lliurar solucions d'integració, automatització i analítica connectant les decisions de plataforma amb les necessitats del roadmap de producte.",
+            "Solucions d'integració, automatització i analítica que van connectar les decisions de plataforma amb les necessitats del full de ruta de producte.",
           compactScope:
-            "Roadmap tècnic i operatiu del departament de Data Engineering.",
+            "Full de ruta tècnic i operatiu del departament de Data Engineering.",
           compactApplication:
             "Disseny de plataforma GCP, lideratge d'equip, estàndards interns i lliurament alineat amb negoci.",
         },
         {
           ...identity(3),
           scope:
-            "Vaig dissenyar pipelines de dades crítics a AWS i Azure amb requisits de disponibilitat, escalabilitat i seguretat.",
+            "Disseny de canalitzacions de dades crítiques a AWS i Azure amb requisits de disponibilitat, escalabilitat i seguretat.",
           approach:
-            "Vaig implementar arquitectures Snowflake, pipelines de CI/CD i automatització. Vaig desenvolupar APIs i microserveis amb Python i FastAPI.",
+            "Implementació d'arquitectures Snowflake, canalitzacions de CI/CD i automatització, a més d'APIs i microserveis amb Python i FastAPI.",
           application:
-            "Vaig donar suport a l'eficiència operativa convertint capacitats de dades en pipelines fiables i serveis orientats a producte.",
-          compactScope: "Pipelines de dades crítics a AWS i Azure.",
+            "Conversió de capacitats de dades en canalitzacions fiables i serveis orientats a producte per millorar l'eficiència operativa.",
+          compactScope: "Canalitzacions de dades crítiques a AWS i Azure.",
           compactApplication:
             "Snowflake, CI/CD, automatització, APIs Python i microserveis FastAPI.",
         },
         {
           ...identity(4),
           scope:
-            "Vaig construir i aportar lideratge tècnic a un departament de dades de nova creació, formant la base tecnològica per a la transformació digital.",
+            "Creació i lideratge tècnic d'un nou departament de dades que va establir la base tecnològica per a la transformació digital.",
           approach:
-            "Vaig desenvolupar pipelines crítics amb Python i Azure Data Factory i vaig gestionar infraestructura de bases de dades per a seguretat, disponibilitat i fiabilitat.",
+            "Desenvolupament de canalitzacions crítiques amb Python i Azure Data Factory i gestió d'infraestructura de bases de dades amb criteris de seguretat, disponibilitat i fiabilitat.",
           application:
-            "Vaig treballar amb unitats de negoci per definir requisits de dades i solucions tècniques alineades amb el creixement de la companyia.",
+            "Definició conjunta amb les unitats de negoci de requisits de dades i solucions tècniques alineades amb el creixement de l'empresa.",
           compactScope:
             "Creació del departament de dades i de les seves bases tècniques.",
           compactApplication:
-            "Pipelines amb Python i Azure Data Factory, infraestructura de bases de dades i requisits de negoci.",
+            "Canalitzacions amb Python i Azure Data Factory, infraestructura de bases de dades i requisits de negoci.",
         },
         {
           ...identity(5),
           scope:
-            "Vaig desenvolupar solucions ETL i de reporting amb SSIS i C#, a més de donar suport a processos d'anàlisi de negoci.",
+            "Desenvolupament de solucions ETL i d'informes amb SSIS i C#, a més de suport a processos d'anàlisi de negoci.",
           approach:
-            "Vaig dissenyar quadres de comandament executius sobre KPIs de negoci, vaig liderar un projecte de transformació comercial i vaig assumir la responsabilitat de la infraestructura de bases de dades.",
+            "Disseny de quadres de comandament executius basats en indicadors de negoci, lideratge d'un projecte de transformació comercial i responsabilitat sobre la infraestructura de bases de dades.",
           application:
-            "Vaig aplicar enginyeria i analítica de dades al reporting, el suport a decisions executives i les iniciatives de clients empresarials.",
-          compactScope: "ETL, reporting i anàlisi de negoci amb SSIS i C#.",
+            "Aplicació d'enginyeria i analítica de dades als informes, al suport de decisions executives i a les iniciatives de clients empresarials.",
+          compactScope: "ETL, informes i anàlisi de negoci amb SSIS i C#.",
           compactApplication:
-            "Dashboards executius, transformació comercial i responsabilitat sobre la infraestructura de bases de dades.",
+            "Quadres de comandament executius, transformació comercial i responsabilitat sobre la infraestructura de bases de dades.",
         },
       ],
     },
@@ -850,46 +851,47 @@ export const content = {
       sectionLabel: "04 / COMPETÈNCIES EN PRÀCTICA",
       title: "Competències i manera de treballar",
       intro:
-        "Utilitzo la tecnologia com a part d'un sistema d'enginyeria més ampli que inclou disseny de plataformes, lliurament de software, govern i col·laboració amb les persones que depenen de les dades.",
-      applicationLabel: "COM HO UTILITZO",
+        "L'ús de la tecnologia forma part d'un sistema d'enginyeria que connecta disseny de plataformes, automatització del lliurament, govern del servei i coordinació de les àrees que produeixen i consumeixen dades.",
+      applicationLabel: "APLICACIÓ",
       items: [
         {
           category: "ENGINYERIA DE DADES",
           technology: "Python · SQL · Airflow · dbt",
           application:
-            "Ingesta, transformació, orquestració i fluxos de qualitat de les dades.",
+            "Construcció de fluxos d'ingesta, transformació, orquestració i qualitat que fan traçable el recorregut de les dades.",
         },
         {
           category: "SERVEIS DE DADES",
           technology: "FastAPI · Microserveis",
           application:
-            "Poso capacitats de dades a disposició de productes i consumidors interns mitjançant serveis mantenibles.",
+            "Exposició de capacitats de dades mitjançant serveis mantenibles per a productes i consumidors interns.",
         },
         {
-          category: "CLOUD I PLATAFORMES DE DADES",
+          category: "NÚVOL I PLATAFORMES DE DADES",
           technology: "BigQuery · Snowflake · AWS · Azure · GCP",
           application:
-            "Emmagatzematge, processament i arquitectura de plataforma segons els requisits del domini i d'operació.",
+            "Selecció d'emmagatzematge, processament i arquitectura segons els requisits de cada domini, la seva escala i el seu model operatiu.",
         },
         {
           category: "LLIURAMENT I OPERACIONS",
           technology: "CI/CD · GitHub · Docker",
           application:
-            "Fluxos d'enginyeria versionats, repetibles i automatitzats amb un ownership operatiu més clar.",
+            "Lliurament versionat, repetible i automatitzat que redueix canvis manuals i explicita la responsabilitat operativa.",
         },
         {
           category: "LIDERATGE I ORGANITZACIÓ",
           technology:
-            "Lideratge tècnic · Comunicació transversal · Gestió de stakeholders · Planificació estratègica · Ownership integral · Resolució de problemes complexos",
+            "Lideratge tècnic i organitzatiu · Comunicació transversal · Gestió de parts interessades · Planificació estratègica · Responsabilitat integral · Resolució de problemes complexos",
           application:
-            "Alineo roadmaps, coordino equips i stakeholders, aclareixo l'ownership i mantinc la responsabilitat des del disseny tècnic fins a l'operació del servei.",
+            "Alineació de fulls de ruta, equips i parts interessades per mantenir les decisions i la responsabilitat des del disseny tècnic fins a l'operació del servei.",
         },
       ],
     },
     education: {
       sectionLabel: "05 / FORMACIÓ",
       title: "Formació",
-      degree: "Grau Superior en Desenvolupament d'Aplicacions Informàtiques",
+      degree:
+        "Cicle formatiu de grau superior d'Administració de Sistemes Informàtics en Xarxa",
       school: "Colegio Cultural",
       gradeLabel: "NOTA",
       grade: "8/10",
@@ -899,7 +901,7 @@ export const content = {
     contact: {
       sectionLabel: "06 / CONTACTE",
       title: "Contacte",
-      copy: "Visc a Barcelona, Espanya. Si la teva organització treballa en estratègia de dades, arquitectura, lliurament de plataformes o models operatius d'enginyeria de dades, pots escriure'm per correu.",
+      copy: "Perfil professional amb base a Barcelona, Espanya. Contacte per a organitzacions amb necessitats d'estratègia de dades, arquitectura, lliurament de plataformes o models operatius d'enginyeria de dades.",
       emailAction: "Escriure a Iván",
       privacy: "El número de telèfon s'omet a la versió pública.",
     },
