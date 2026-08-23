@@ -13,13 +13,16 @@ interface Props {
 const { locale, meta } = Astro.props;
 const site = Astro.site ?? new URL("https://ilopex.com");
 const canonical = new URL(localePath(locale), site);
+const profileImage = new URL(profile.image, site);
 const structuredData = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "Person",
   name: profile.name,
   url: canonical.href,
   email: `mailto:${profile.email}`,
-  sameAs: [profile.linkedIn],
+  image: profileImage.href,
+  jobTitle: "Data Strategy & Architecture",
+  sameAs: [profile.linkedIn, profile.malt],
 });
 ---
 
@@ -51,9 +54,12 @@ const structuredData = JSON.stringify({
     <meta property="og:title" content={meta.title} />
     <meta property="og:description" content={meta.description} />
     <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={profileImage} />
+    <meta property="og:image:alt" content={profile.name} />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content={meta.title} />
     <meta name="twitter:description" content={meta.description} />
+    <meta name="twitter:image" content={profileImage} />
 
     <script type="application/ld+json" set:html={structuredData} is:inline />
   </head>

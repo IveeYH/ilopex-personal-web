@@ -7,18 +7,21 @@ const pages = [
     lang: "es",
     canonical: "https://ilopex.com/",
     content: "Experiencia profesional",
+    overview: "continuidad del servicio en AWS y GCP",
   },
   {
     file: "dist/en/index.html",
     lang: "en",
     canonical: "https://ilopex.com/en/",
     content: "Professional experience",
+    overview: "service continuity across AWS and GCP",
   },
   {
     file: "dist/ca/index.html",
     lang: "ca",
     canonical: "https://ilopex.com/ca/",
     content: "Experiència professional",
+    overview: "continuïtat del servei a AWS i GCP",
   },
 ];
 
@@ -31,18 +34,46 @@ for (const page of pages) {
     `${page.file} is missing translated content`,
   );
   assert.ok(
+    html.includes(page.overview),
+    `${page.file} has an unexpected professional overview`,
+  );
+  assert.ok(
     html.includes(`rel="canonical" href="${page.canonical}"`),
     `${page.file} has an unexpected canonical URL`,
   );
   assert.ok(
-    html.includes("Data Architecture &amp; Strategy"),
+    html.includes("Data Strategy &amp; Architecture"),
     `${page.file} is missing the footer specialty`,
   );
+  assert.ok(
+    html.includes('src="/images/ivan-lopez-lopez.png"'),
+    `${page.file} is missing the profile portrait`,
+  );
+  for (const profileUrl of [
+    "https://www.linkedin.com/in/ivan-lopez-lopez/",
+    "https://www.malt.es/profile/ivanlopezlopez",
+  ]) {
+    assert.ok(
+      html.includes(`href="${profileUrl}"`),
+      `${page.file} is missing professional profile ${profileUrl}`,
+    );
+  }
+  assert.ok(
+    html.includes("Foundational Data Architecture"),
+    `${page.file} is missing the foundational architecture profile`,
+  );
 
-  for (const experienceId of ["astrazeneca", "iag"]) {
+  for (const experienceId of [
+    "astrazeneca",
+    "iag",
+    "isdin",
+    "penguin",
+    "primer-impacto",
+    "winche",
+  ]) {
     assert.ok(
       html.includes(`href="#experience-${experienceId}"`),
-      `${page.file} is missing the ${experienceId} context link`,
+      `${page.file} is missing a claim linked to ${experienceId}`,
     );
     assert.ok(
       html.includes(`id="experience-${experienceId}"`),

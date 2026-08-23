@@ -237,15 +237,58 @@ dt {
   line-height: 1.25;
 }
 
+.hero__identity {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 44px;
+}
+
+.hero__portrait {
+  width: 128px;
+  height: 128px;
+  flex: 0 0 auto;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.hero__identity-copy {
+  min-width: 0;
+}
+
 .hero__location {
-  margin-bottom: 54px;
+  margin-bottom: 18px;
   color: var(--color-secondary);
   font-size: 14px;
 }
 
+.hero__social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+  list-style: none;
+}
+
+.hero__social-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--color-brand);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.hero__social-links a:hover {
+  text-decoration: underline;
+}
+
 .hero__statement {
   max-width: 590px;
-  margin-bottom: 60px;
+  margin-bottom: 18px;
   color: var(--color-secondary);
   font-size: 18px;
   line-height: 1.45;
@@ -361,13 +404,16 @@ dt {
   margin-top: 54px;
 }
 
-.profile-copy p:first-child {
-  margin-bottom: 66px;
+.profile-statement:first-child > p {
   font-size: 18px;
   line-height: 1.45;
 }
 
-.profile-copy p:last-child {
+.profile-statement + .profile-statement {
+  margin-top: 50px;
+}
+
+.profile-statement:last-child > p {
   margin-bottom: 0;
   color: var(--color-secondary);
   line-height: 1.45;
@@ -400,17 +446,43 @@ dt {
   line-height: 1.35;
 }
 
-.leadership-context__source {
-  display: inline-flex;
+.experience-references {
+  display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 6px;
-  margin-top: 14px;
+  gap: 8px 12px;
+  margin-top: 16px;
+}
+
+.experience-references__label {
+  color: var(--color-secondary);
+}
+
+.experience-references ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px 14px;
+  list-style: none;
+}
+
+.experience-reference {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--color-brand);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
   text-decoration: none;
 }
 
-.leadership-context__source:hover {
+.experience-reference:hover {
   text-decoration: underline;
+}
+
+.experience-references--hero {
+  margin-bottom: 48px;
 }
 
 #capabilities {
@@ -425,6 +497,8 @@ dt {
 }
 
 .capability-card {
+  display: flex;
+  flex-direction: column;
   min-height: 492px;
   padding: 28px;
 }
@@ -555,6 +629,8 @@ dt {
 }
 
 .skill-card {
+  display: flex;
+  flex-direction: column;
   min-height: 224px;
   padding: 24px;
 }
@@ -577,10 +653,15 @@ dt {
   color: var(--color-secondary);
 }
 
-.skill-card > p:last-child {
+.skill-card > p:not(.eyebrow):last-of-type {
   margin-bottom: 0;
   color: var(--color-secondary);
   line-height: 1.35;
+}
+
+.skill-card > .experience-references {
+  margin-top: auto;
+  padding-top: 20px;
 }
 
 #education {
@@ -849,12 +930,23 @@ dt {
     margin-bottom: 12px;
   }
 
-  .hero__location {
+  .hero__identity {
+    align-items: flex-start;
+    gap: 18px;
     margin-bottom: 38px;
   }
 
+  .hero__portrait {
+    width: 92px;
+    height: 92px;
+  }
+
+  .hero__location {
+    margin-bottom: 14px;
+  }
+
   .hero__statement {
-    margin-bottom: 50px;
+    margin-bottom: 18px;
     font-size: 16px;
     line-height: 1.45;
   }
@@ -919,10 +1011,13 @@ dt {
     margin-top: 34px;
   }
 
-  .profile-copy p:first-child,
-  .profile-copy p:last-child {
-    margin-bottom: 32px;
+  .profile-statement > p {
+    margin-bottom: 0;
     font-size: 16px;
+  }
+
+  .profile-statement + .profile-statement {
+    margin-top: 38px;
   }
 
   .leadership-context {
@@ -1046,7 +1141,7 @@ dt {
     display: none;
   }
 
-  .skill-card > p:last-child {
+  .skill-card > p:not(.eyebrow):last-of-type {
     font-size: 14px;
   }
 

@@ -1,0 +1,31 @@
+---
+import type { ExperienceReference } from "../i18n/content";
+
+interface Props {
+  label: string;
+  references: ExperienceReference[];
+  className?: string;
+}
+
+const { label, references, className } = Astro.props;
+---
+
+<div class:list={["experience-references", className]}>
+  <span class="detail-label experience-references__label">{label}</span>
+  <ul role="list">
+    {
+      references.map((reference) => (
+        <li>
+          <a
+            class="experience-reference"
+            href={`#experience-${reference.experienceId}`}
+            aria-label={`${label}: ${reference.sourceLabel}`}
+          >
+            {reference.sourceLabel}
+            <span aria-hidden="true">↓</span>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</div>
