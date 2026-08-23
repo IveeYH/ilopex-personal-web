@@ -303,13 +303,9 @@ dt {
 }
 
 .hero__overview-detail {
-  margin-bottom: 18px;
+  margin-bottom: 56px;
   color: var(--color-secondary);
   line-height: 1.45;
-}
-
-.hero__overview > .experience-references {
-  margin-bottom: 40px;
 }
 
 .hero__areas-label {
@@ -446,10 +442,6 @@ dt {
   margin-bottom: 48px;
 }
 
-.experience-references--section {
-  margin-top: 32px;
-}
-
 #capabilities {
   padding: 72px 0 82px;
 }
@@ -474,11 +466,6 @@ dt {
 
 .capability-card dl {
   margin-bottom: 0;
-}
-
-.capability-card > .experience-references {
-  margin-top: auto;
-  padding-top: 22px;
 }
 
 .capability-card dl > div {

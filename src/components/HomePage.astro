@@ -49,10 +49,6 @@ const copy = content[locale];
           <p class="eyebrow">{copy.hero.overviewLabel}</p>
           <p class="hero__overview-lead">{copy.hero.overview}</p>
           <p class="hero__overview-detail">{copy.hero.overviewDetail}</p>
-          <ExperienceReferences
-            label={copy.experienceReferenceLabel}
-            references={copy.hero.overviewReferences}
-          />
           <p class="detail-label hero__areas-label">{copy.hero.areasLabel}</p>
           <ul role="list">
             {
@@ -124,11 +120,6 @@ const copy = content[locale];
           intro={copy.capabilities.intro}
           titleId="capabilities-title"
         />
-        <ExperienceReferences
-          label={copy.experienceReferenceLabel}
-          references={copy.capabilities.references}
-          className="experience-references--section"
-        />
         <CapabilityGrid
           capabilities={copy.capabilities}
           referenceLabel={copy.experienceReferenceLabel}
@@ -163,11 +154,6 @@ const copy = content[locale];
           title={copy.skills.title}
           intro={copy.skills.intro}
           titleId="skills-title"
-        />
-        <ExperienceReferences
-          label={copy.experienceReferenceLabel}
-          references={copy.skills.references}
-          className="experience-references--section"
         />
         <SkillsGrid
           skills={copy.skills}

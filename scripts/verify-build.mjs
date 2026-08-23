@@ -7,18 +7,21 @@ const pages = [
     lang: "es",
     canonical: "https://ilopex.com/",
     content: "Experiencia profesional",
+    overview: "continuidad del servicio en AWS y GCP",
   },
   {
     file: "dist/en/index.html",
     lang: "en",
     canonical: "https://ilopex.com/en/",
     content: "Professional experience",
+    overview: "service continuity across AWS and GCP",
   },
   {
     file: "dist/ca/index.html",
     lang: "ca",
     canonical: "https://ilopex.com/ca/",
     content: "Experiència professional",
+    overview: "continuïtat del servei a AWS i GCP",
   },
 ];
 
@@ -29,6 +32,10 @@ for (const page of pages) {
   assert.ok(
     html.includes(page.content),
     `${page.file} is missing translated content`,
+  );
+  assert.ok(
+    html.includes(page.overview),
+    `${page.file} has an unexpected professional overview`,
   );
   assert.ok(
     html.includes(`rel="canonical" href="${page.canonical}"`),

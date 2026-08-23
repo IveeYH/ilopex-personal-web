@@ -44,10 +44,9 @@ interface ReferencedText {
 
 interface Capability {
   title: string;
-  what: string;
-  apply: string;
-  use: string;
-  references: ExperienceReference[];
+  what: ReferencedText;
+  apply: ReferencedText;
+  use: ReferencedText;
 }
 
 interface Experience {
@@ -96,7 +95,6 @@ export interface SiteContent {
     overviewLabel: string;
     overview: string;
     overviewDetail: string;
-    overviewReferences: ExperienceReference[];
     areasLabel: string;
     areas: string[];
     downloadResume: string;
@@ -116,7 +114,6 @@ export interface SiteContent {
     sectionLabel: string;
     title: string;
     intro: string;
-    references: ExperienceReference[];
     labels: { what: string; apply: string; use: string };
     items: Capability[];
   };
@@ -131,7 +128,6 @@ export interface SiteContent {
     sectionLabel: string;
     title: string;
     intro: string;
-    references: ExperienceReference[];
     applicationLabel: string;
     items: Skill[];
   };
@@ -214,10 +210,9 @@ export const content = {
       contact: "Contacto",
       overviewLabel: "RESUMEN PROFESIONAL",
       overview:
-        "Arquitectura de datos empresarial, plataformas en la nube, estándares de ingeniería y continuidad del servicio en AWS, Azure y GCP.",
+        "Arquitectura de datos empresarial, plataformas en la nube, estándares de ingeniería y continuidad del servicio en AWS y GCP.",
       overviewDetail:
         "Responsabilidad de convertir prioridades de Data Science & AI, Data Management, Enterprise Architecture, IT y negocio en arquitecturas, estándares de entrega y responsabilidades operativas sostenibles.",
-      overviewReferences: related("astrazeneca", "iag", "isdin", "penguin"),
       areasLabel: "ÁREAS DE TRABAJO",
       areas: [
         "Estrategia y arquitectura de datos",
@@ -265,7 +260,6 @@ export const content = {
       title: "Capacidades y uso organizativo",
       intro:
         "El alcance combina arquitectura objetivo, entrega de ingeniería, integración de datos y responsabilidad sobre el servicio, desde la planificación a largo plazo hasta la operación en producción.",
-      references: related("astrazeneca", "iag", "isdin"),
       labels: {
         what: "ÁMBITO",
         apply: "APLICACIÓN",
@@ -274,40 +268,63 @@ export const content = {
       items: [
         {
           title: "Estrategia y arquitectura de datos",
-          what: "Definición de dirección tecnológica, arquitecturas objetivo y estándares de ingeniería para plataformas y productos de datos.",
-          apply:
-            "Alineación de Data Science & AI, Data Management, Enterprise Architecture, IT y áreas de negocio sobre decisiones técnicas comunes.",
-          use: "Una dirección técnica compartida que evita iniciativas aisladas y mantiene la inversión en datos ligada a prioridades corporativas.",
-          references: related("astrazeneca", "iag", "isdin"),
+          what: {
+            text: "Definición de dirección tecnológica, arquitecturas objetivo y estándares de ingeniería para plataformas y productos de datos.",
+            references: related("iag", "isdin"),
+          },
+          apply: {
+            text: "Alineación de Data Science & AI, Data Management, Enterprise Architecture, IT y áreas de negocio sobre decisiones técnicas comunes.",
+            references: related("astrazeneca", "iag"),
+          },
+          use: {
+            text: "Una dirección técnica compartida que evita iniciativas aisladas y mantiene la inversión en datos ligada a prioridades corporativas.",
+            references: related("astrazeneca", "iag"),
+          },
         },
         {
           title: "Liderazgo y entrega de ingeniería",
-          what: "Dirección de ingenieros de datos y coordinación de la entrega entre equipos, áreas de negocio y regiones.",
-          apply:
-            "Definición de hojas de ruta, patrones, responsabilidades y prácticas de ingeniería conectadas con las prioridades de las áreas implicadas.",
-          use: "Responsabilidades y expectativas de entrega explícitas, incluso cuando una iniciativa depende de varios equipos.",
-          references: related("astrazeneca", "iag", "isdin"),
+          what: {
+            text: "Dirección de ingenieros de datos y coordinación de la entrega entre equipos, áreas de negocio y regiones.",
+            references: related("astrazeneca", "iag", "isdin"),
+          },
+          apply: {
+            text: "Definición de hojas de ruta, patrones, responsabilidades y prácticas de ingeniería conectadas con las prioridades de las áreas implicadas.",
+            references: related("astrazeneca", "iag", "isdin"),
+          },
+          use: {
+            text: "Responsabilidades y expectativas de entrega explícitas, incluso cuando una iniciativa depende de varios equipos.",
+            references: related("astrazeneca", "iag"),
+          },
         },
         {
           title: "Plataformas, productos e integración de datos",
-          what: "Diseño y supervisión de pipelines, productos de datos, APIs y servicios desde la ingesta hasta el consumo.",
-          apply:
-            "Python, SQL, Airflow, dbt y FastAPI sobre BigQuery, Snowflake y servicios de AWS, Azure y GCP, seleccionados según el contexto operativo.",
-          use: "Bases fiables para analítica y procesos operativos, con capacidades reutilizables entre distintas funciones de negocio.",
-          references: related("iag", "isdin", "penguin", "primer-impacto"),
+          what: {
+            text: "Diseño y supervisión de pipelines, productos de datos, APIs y servicios desde la ingesta hasta el consumo.",
+            references: related("isdin", "penguin", "primer-impacto"),
+          },
+          apply: {
+            text: "Python, SQL, Airflow, dbt y FastAPI sobre BigQuery, Snowflake y servicios de AWS, Azure y GCP, seleccionados según el contexto operativo.",
+            references: related("iag", "isdin", "penguin"),
+          },
+          use: {
+            text: "Bases fiables para analítica y procesos operativos, con capacidades reutilizables entre distintas funciones de negocio.",
+            references: related("isdin", "penguin", "primer-impacto"),
+          },
         },
         {
           title: "Gobierno, fiabilidad y operación del servicio",
-          what: "Responsabilidad sobre seguridad, escalabilidad, resiliencia, calidad y continuidad de plataformas críticas.",
-          apply:
-            "Integración de gobierno, CI/CD, observabilidad, despliegue automatizado, mitigación de riesgos, recuperación y requisitos regulatorios.",
-          use: "Riesgo operativo, cumplimiento y continuidad incorporados al diseño, no añadidos después de poner el servicio en producción.",
-          references: related(
-            "astrazeneca",
-            "iag",
-            "penguin",
-            "primer-impacto",
-          ),
+          what: {
+            text: "Responsabilidad sobre seguridad, escalabilidad, resiliencia, calidad y continuidad de plataformas críticas.",
+            references: related("astrazeneca", "iag", "penguin"),
+          },
+          apply: {
+            text: "Integración de gobierno, CI/CD, observabilidad, despliegue automatizado, mitigación de riesgos, recuperación y requisitos regulatorios.",
+            references: related("astrazeneca", "iag", "penguin"),
+          },
+          use: {
+            text: "Riesgo operativo, cumplimiento y continuidad incorporados al diseño, no añadidos después de poner el servicio en producción.",
+            references: related("astrazeneca", "iag"),
+          },
         },
       ],
     },
@@ -406,7 +423,6 @@ export const content = {
       title: "Competencias y forma de trabajo",
       intro:
         "El uso de la tecnología forma parte de un sistema de ingeniería que conecta diseño de plataformas, automatización de la entrega, gobierno del servicio y coordinación de las áreas que producen y consumen datos.",
-      references: related("isdin", "penguin", "primer-impacto"),
       applicationLabel: "APLICACIÓN",
       items: [
         {
@@ -504,10 +520,9 @@ export const content = {
       contact: "Contact",
       overviewLabel: "PROFESSIONAL OVERVIEW",
       overview:
-        "Enterprise data architecture, cloud platforms, engineering standards and service continuity across AWS, Azure and GCP.",
+        "Enterprise data architecture, cloud platforms, engineering standards and service continuity across AWS and GCP.",
       overviewDetail:
         "Responsibility for translating priorities from Data Science & AI, Data Management, Enterprise Architecture, IT and business into sustainable architectures, delivery standards and operating responsibilities.",
-      overviewReferences: related("astrazeneca", "iag", "isdin", "penguin"),
       areasLabel: "AREAS OF WORK",
       areas: [
         "Data strategy and architecture",
@@ -556,7 +571,6 @@ export const content = {
       title: "Capabilities and organizational use",
       intro:
         "The scope combines target architecture, engineering delivery, data integration and service accountability, from long-term planning through production operation.",
-      references: related("astrazeneca", "iag", "isdin"),
       labels: {
         what: "SCOPE",
         apply: "APPLICATION",
@@ -565,40 +579,63 @@ export const content = {
       items: [
         {
           title: "Data strategy and architecture",
-          what: "Definition of technology direction, target architectures and engineering standards for data platforms and products.",
-          apply:
-            "Alignment of Data Science & AI, Data Management, Enterprise Architecture, IT and business stakeholders around shared technical decisions.",
-          use: "A shared technical direction that prevents isolated initiatives and keeps data investment tied to corporate priorities.",
-          references: related("astrazeneca", "iag", "isdin"),
+          what: {
+            text: "Definition of technology direction, target architectures and engineering standards for data platforms and products.",
+            references: related("iag", "isdin"),
+          },
+          apply: {
+            text: "Alignment of Data Science & AI, Data Management, Enterprise Architecture, IT and business stakeholders around shared technical decisions.",
+            references: related("astrazeneca", "iag"),
+          },
+          use: {
+            text: "A shared technical direction that prevents isolated initiatives and keeps data investment tied to corporate priorities.",
+            references: related("astrazeneca", "iag"),
+          },
         },
         {
           title: "Engineering leadership and delivery",
-          what: "Leadership of data engineers and coordination of delivery across teams, business areas and regions.",
-          apply:
-            "Definition of roadmaps, patterns, accountability and engineering practices connected to stakeholder priorities.",
-          use: "Explicit responsibilities and delivery expectations, including initiatives that depend on multiple teams.",
-          references: related("astrazeneca", "iag", "isdin"),
+          what: {
+            text: "Leadership of data engineers and coordination of delivery across teams, business areas and regions.",
+            references: related("astrazeneca", "iag", "isdin"),
+          },
+          apply: {
+            text: "Definition of roadmaps, patterns, accountability and engineering practices connected to stakeholder priorities.",
+            references: related("astrazeneca", "iag", "isdin"),
+          },
+          use: {
+            text: "Explicit responsibilities and delivery expectations, including initiatives that depend on multiple teams.",
+            references: related("astrazeneca", "iag"),
+          },
         },
         {
           title: "Data platforms, products and integration",
-          what: "Design and oversight of pipelines, data products, APIs and services from ingestion through consumption.",
-          apply:
-            "Python, SQL, Airflow, dbt and FastAPI across BigQuery, Snowflake and AWS, Azure and GCP services, selected for the operating context.",
-          use: "Reliable foundations for analytics and operational processes, with capabilities reusable across business functions.",
-          references: related("iag", "isdin", "penguin", "primer-impacto"),
+          what: {
+            text: "Design and oversight of pipelines, data products, APIs and services from ingestion through consumption.",
+            references: related("isdin", "penguin", "primer-impacto"),
+          },
+          apply: {
+            text: "Python, SQL, Airflow, dbt and FastAPI across BigQuery, Snowflake and AWS, Azure and GCP services, selected for the operating context.",
+            references: related("iag", "isdin", "penguin"),
+          },
+          use: {
+            text: "Reliable foundations for analytics and operational processes, with capabilities reusable across business functions.",
+            references: related("isdin", "penguin", "primer-impacto"),
+          },
         },
         {
           title: "Governance, reliability and service operation",
-          what: "Accountability for security, scalability, resilience, data quality and continuity across critical platforms.",
-          apply:
-            "Integration of governance, CI/CD, observability, automated deployment, risk mitigation, recovery and regulatory requirements.",
-          use: "Operational risk, compliance and continuity built into the design rather than added after production release.",
-          references: related(
-            "astrazeneca",
-            "iag",
-            "penguin",
-            "primer-impacto",
-          ),
+          what: {
+            text: "Accountability for security, scalability, resilience, data quality and continuity across critical platforms.",
+            references: related("astrazeneca", "iag", "penguin"),
+          },
+          apply: {
+            text: "Integration of governance, CI/CD, observability, automated deployment, risk mitigation, recovery and regulatory requirements.",
+            references: related("astrazeneca", "iag", "penguin"),
+          },
+          use: {
+            text: "Operational risk, compliance and continuity built into the design rather than added after production release.",
+            references: related("astrazeneca", "iag"),
+          },
         },
       ],
     },
@@ -698,7 +735,6 @@ export const content = {
       title: "Skills and working approach",
       intro:
         "Technology forms part of an engineering system that connects platform design, delivery automation, service governance and coordination of the teams that produce and consume data.",
-      references: related("isdin", "penguin", "primer-impacto"),
       applicationLabel: "APPLICATION",
       items: [
         {
@@ -795,10 +831,9 @@ export const content = {
       contact: "Contacte",
       overviewLabel: "RESUM PROFESSIONAL",
       overview:
-        "Arquitectura de dades empresarial, plataformes al núvol, estàndards d'enginyeria i continuïtat del servei a AWS, Azure i GCP.",
+        "Arquitectura de dades empresarial, plataformes al núvol, estàndards d'enginyeria i continuïtat del servei a AWS i GCP.",
       overviewDetail:
         "Responsabilitat de convertir prioritats de Data Science & AI, Data Management, Enterprise Architecture, IT i negoci en arquitectures, estàndards de lliurament i responsabilitats operatives sostenibles.",
-      overviewReferences: related("astrazeneca", "iag", "isdin", "penguin"),
       areasLabel: "ÀREES DE TREBALL",
       areas: [
         "Estratègia i arquitectura de dades",
@@ -846,7 +881,6 @@ export const content = {
       title: "Capacitats i ús organitzatiu",
       intro:
         "L'abast combina arquitectura objectiu, lliurament d'enginyeria, integració de dades i responsabilitat sobre el servei, des de la planificació a llarg termini fins a l'operació en producció.",
-      references: related("astrazeneca", "iag", "isdin"),
       labels: {
         what: "ÀMBIT",
         apply: "APLICACIÓ",
@@ -855,40 +889,63 @@ export const content = {
       items: [
         {
           title: "Estratègia i arquitectura de dades",
-          what: "Definició de la direcció tecnològica, arquitectures objectiu i estàndards d'enginyeria per a plataformes i productes de dades.",
-          apply:
-            "Alineació de Data Science & AI, Data Management, Enterprise Architecture, IT i àrees de negoci al voltant de decisions tècniques comunes.",
-          use: "Una direcció tècnica compartida que evita iniciatives aïllades i manté la inversió en dades vinculada a prioritats corporatives.",
-          references: related("astrazeneca", "iag", "isdin"),
+          what: {
+            text: "Definició de la direcció tecnològica, arquitectures objectiu i estàndards d'enginyeria per a plataformes i productes de dades.",
+            references: related("iag", "isdin"),
+          },
+          apply: {
+            text: "Alineació de Data Science & AI, Data Management, Enterprise Architecture, IT i àrees de negoci al voltant de decisions tècniques comunes.",
+            references: related("astrazeneca", "iag"),
+          },
+          use: {
+            text: "Una direcció tècnica compartida que evita iniciatives aïllades i manté la inversió en dades vinculada a prioritats corporatives.",
+            references: related("astrazeneca", "iag"),
+          },
         },
         {
           title: "Lideratge i lliurament d'enginyeria",
-          what: "Direcció d'enginyers de dades i coordinació del lliurament entre equips, àrees de negoci i regions.",
-          apply:
-            "Definició de fulls de ruta, patrons, responsabilitats i pràctiques d'enginyeria connectades amb les prioritats de les àrees implicades.",
-          use: "Responsabilitats i expectatives de lliurament explícites, també quan una iniciativa depèn de diversos equips.",
-          references: related("astrazeneca", "iag", "isdin"),
+          what: {
+            text: "Direcció d'enginyers de dades i coordinació del lliurament entre equips, àrees de negoci i regions.",
+            references: related("astrazeneca", "iag", "isdin"),
+          },
+          apply: {
+            text: "Definició de fulls de ruta, patrons, responsabilitats i pràctiques d'enginyeria connectades amb les prioritats de les àrees implicades.",
+            references: related("astrazeneca", "iag", "isdin"),
+          },
+          use: {
+            text: "Responsabilitats i expectatives de lliurament explícites, també quan una iniciativa depèn de diversos equips.",
+            references: related("astrazeneca", "iag"),
+          },
         },
         {
           title: "Plataformes, productes i integració de dades",
-          what: "Disseny i supervisió de canalitzacions de dades, productes, APIs i serveis des de la ingesta fins al consum.",
-          apply:
-            "Python, SQL, Airflow, dbt i FastAPI sobre BigQuery, Snowflake i serveis d'AWS, Azure i GCP, seleccionats segons el context operatiu.",
-          use: "Bases fiables per a analítica i processos operatius, amb capacitats reutilitzables entre diferents funcions de negoci.",
-          references: related("iag", "isdin", "penguin", "primer-impacto"),
+          what: {
+            text: "Disseny i supervisió de canalitzacions de dades, productes, APIs i serveis des de la ingesta fins al consum.",
+            references: related("isdin", "penguin", "primer-impacto"),
+          },
+          apply: {
+            text: "Python, SQL, Airflow, dbt i FastAPI sobre BigQuery, Snowflake i serveis d'AWS, Azure i GCP, seleccionats segons el context operatiu.",
+            references: related("iag", "isdin", "penguin"),
+          },
+          use: {
+            text: "Bases fiables per a analítica i processos operatius, amb capacitats reutilitzables entre diferents funcions de negoci.",
+            references: related("isdin", "penguin", "primer-impacto"),
+          },
         },
         {
           title: "Govern, fiabilitat i operació del servei",
-          what: "Responsabilitat sobre seguretat, escalabilitat, resiliència, qualitat i continuïtat de plataformes crítiques.",
-          apply:
-            "Integració de govern, CI/CD, observabilitat, desplegament automatitzat, mitigació de riscos, recuperació i requisits reguladors.",
-          use: "Risc operatiu, compliment i continuïtat incorporats al disseny, no afegits després de posar el servei en producció.",
-          references: related(
-            "astrazeneca",
-            "iag",
-            "penguin",
-            "primer-impacto",
-          ),
+          what: {
+            text: "Responsabilitat sobre seguretat, escalabilitat, resiliència, qualitat i continuïtat de plataformes crítiques.",
+            references: related("astrazeneca", "iag", "penguin"),
+          },
+          apply: {
+            text: "Integració de govern, CI/CD, observabilitat, desplegament automatitzat, mitigació de riscos, recuperació i requisits reguladors.",
+            references: related("astrazeneca", "iag", "penguin"),
+          },
+          use: {
+            text: "Risc operatiu, compliment i continuïtat incorporats al disseny, no afegits després de posar el servei en producció.",
+            references: related("astrazeneca", "iag"),
+          },
         },
       ],
     },
@@ -987,7 +1044,6 @@ export const content = {
       title: "Competències i manera de treballar",
       intro:
         "L'ús de la tecnologia forma part d'un sistema d'enginyeria que connecta disseny de plataformes, automatització del lliurament, govern del servei i coordinació de les àrees que produeixen i consumeixen dades.",
-      references: related("isdin", "penguin", "primer-impacto"),
       applicationLabel: "APLICACIÓ",
       items: [
         {

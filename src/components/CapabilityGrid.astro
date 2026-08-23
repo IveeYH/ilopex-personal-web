@@ -18,21 +18,29 @@ const { capabilities, referenceLabel } = Astro.props;
         <dl>
           <div>
             <dt>{capabilities.labels.what}</dt>
-            <dd>{item.what}</dd>
+            <dd>{item.what.text}</dd>
+            <ExperienceReferences
+              label={referenceLabel}
+              references={item.what.references}
+            />
           </div>
           <div>
             <dt>{capabilities.labels.apply}</dt>
-            <dd>{item.apply}</dd>
+            <dd>{item.apply.text}</dd>
+            <ExperienceReferences
+              label={referenceLabel}
+              references={item.apply.references}
+            />
           </div>
           <div>
             <dt>{capabilities.labels.use}</dt>
-            <dd>{item.use}</dd>
+            <dd>{item.use.text}</dd>
+            <ExperienceReferences
+              label={referenceLabel}
+              references={item.use.references}
+            />
           </div>
         </dl>
-        <ExperienceReferences
-          label={referenceLabel}
-          references={item.references}
-        />
       </article>
     ))
   }
