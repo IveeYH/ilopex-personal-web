@@ -42,9 +42,22 @@ for (const page of pages) {
     `${page.file} has an unexpected canonical URL`,
   );
   assert.ok(
-    html.includes("Data Architecture &amp; Strategy"),
+    html.includes("Data Strategy &amp; Architecture"),
     `${page.file} is missing the footer specialty`,
   );
+  assert.ok(
+    html.includes('src="/images/ivan-lopez-lopez.png"'),
+    `${page.file} is missing the profile portrait`,
+  );
+  for (const profileUrl of [
+    "https://www.linkedin.com/in/ivan-lopez-lopez/",
+    "https://www.malt.es/profile/ivanlopezlopez",
+  ]) {
+    assert.ok(
+      html.includes(`href="${profileUrl}"`),
+      `${page.file} is missing professional profile ${profileUrl}`,
+    );
+  }
   assert.ok(
     html.includes("Foundational Data Architecture"),
     `${page.file} is missing the foundational architecture profile`,

@@ -27,8 +27,40 @@ const copy = content[locale];
         <div class="hero__primary">
           <p class="eyebrow">{copy.hero.eyebrow}</p>
           <h1 id="page-title">{profile.name}</h1>
-          <p class="hero__role">{copy.hero.role}</p>
-          <p class="hero__location">{copy.hero.location}</p>
+          <div class="hero__identity">
+            <img
+              class="hero__portrait"
+              src={profile.image}
+              alt={profile.name}
+              width="128"
+              height="128"
+              loading="eager"
+              fetchpriority="high"
+            />
+            <div class="hero__identity-copy">
+              <p class="hero__role">{copy.hero.role}</p>
+              <p class="hero__location">{copy.hero.location}</p>
+              <ul
+                class="hero__social-links"
+                aria-label={copy.a11y.professionalProfiles}
+              >
+                <li>
+                  <a
+                    href={profile.linkedIn}
+                    rel="me noreferrer"
+                    target="_blank"
+                  >
+                    LinkedIn<span aria-hidden="true">↗</span>
+                  </a>
+                </li>
+                <li>
+                  <a href={profile.malt} rel="me noreferrer" target="_blank">
+                    Malt<span aria-hidden="true">↗</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
           <p class="hero__statement">{copy.hero.statement.text}</p>
           <ExperienceReferences
             label={copy.experienceReferenceLabel}

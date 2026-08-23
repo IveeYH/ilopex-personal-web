@@ -4,6 +4,8 @@ export const profile = {
   name: "Iván López López",
   email: "ivanlopezlopez1997@gmail.com",
   linkedIn: "https://www.linkedin.com/in/ivan-lopez-lopez/",
+  malt: "https://www.malt.es/profile/ivanlopezlopez",
+  image: "/images/ivan-lopez-lopez.png",
 } as const;
 
 const companies = [
@@ -72,7 +74,12 @@ interface Skill {
 export interface SiteContent {
   experienceReferenceLabel: string;
   meta: { title: string; description: string };
-  a11y: { skipToContent: string; openMenu: string; closeMenu: string };
+  a11y: {
+    skipToContent: string;
+    openMenu: string;
+    closeMenu: string;
+    professionalProfiles: string;
+  };
   nav: {
     label: string;
     menu: string;
@@ -185,6 +192,7 @@ export const content = {
       skipToContent: "Saltar al contenido",
       openMenu: "Abrir menú",
       closeMenu: "Cerrar menú",
+      professionalProfiles: "Perfiles profesionales",
     },
     nav: {
       label: "Navegación principal",
@@ -200,7 +208,7 @@ export const content = {
     },
     hero: {
       eyebrow: "LIDERAZGO EN INGENIERÍA DE DATOS",
-      role: "Associate Director, Data Engineering",
+      role: "Data Strategy & Architecture",
       location: "Barcelona, España",
       statement: {
         text: "Dirección de equipos globales de ingeniería de datos y definición del modelo con el que se diseñan, gobiernan, entregan y operan plataformas y productos entre negocio y tecnología.",
@@ -482,7 +490,7 @@ export const content = {
       privacy: "El número de teléfono se omite en la versión pública.",
     },
     footer:
-      "Iván López López · Data Architecture & Strategy · Barcelona, España",
+      "Iván López López · Data Strategy & Architecture · Barcelona, España",
   },
   en: {
     experienceReferenceLabel: "Related experience",
@@ -495,6 +503,7 @@ export const content = {
       skipToContent: "Skip to content",
       openMenu: "Open menu",
       closeMenu: "Close menu",
+      professionalProfiles: "Professional profiles",
     },
     nav: {
       label: "Main navigation",
@@ -510,7 +519,7 @@ export const content = {
     },
     hero: {
       eyebrow: "DATA ENGINEERING LEADERSHIP",
-      role: "Associate Director, Data Engineering",
+      role: "Data Strategy & Architecture",
       location: "Barcelona, Spain",
       statement: {
         text: "Leadership of global data engineering teams and definition of the operating model used to design, govern, deliver and run platforms and products across business and technology.",
@@ -793,7 +802,7 @@ export const content = {
       privacy: "Phone number omitted from the public version.",
     },
     footer:
-      "Iván López López · Data Architecture & Strategy · Barcelona, Spain",
+      "Iván López López · Data Strategy & Architecture · Barcelona, Spain",
   },
   ca: {
     experienceReferenceLabel: "Experiència relacionada",
@@ -806,6 +815,7 @@ export const content = {
       skipToContent: "Salta al contingut",
       openMenu: "Obre el menú",
       closeMenu: "Tanca el menú",
+      professionalProfiles: "Perfils professionals",
     },
     nav: {
       label: "Navegació principal",
@@ -821,7 +831,7 @@ export const content = {
     },
     hero: {
       eyebrow: "LIDERATGE EN ENGINYERIA DE DADES",
-      role: "Associate Director, Data Engineering",
+      role: "Data Strategy & Architecture",
       location: "Barcelona, Espanya",
       statement: {
         text: "Direcció d'equips globals d'enginyeria de dades i definició del model amb què es dissenyen, governen, lliuren i operen plataformes i productes entre negoci i tecnologia.",
@@ -1103,6 +1113,6 @@ export const content = {
       privacy: "El número de telèfon s'omet a la versió pública.",
     },
     footer:
-      "Iván López López · Data Architecture & Strategy · Barcelona, Espanya",
+      "Iván López López · Data Strategy & Architecture · Barcelona, Espanya",
   },
 } satisfies Record<Locale, SiteContent>;
